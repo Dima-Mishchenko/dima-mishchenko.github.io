@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About – Currency Converter</title>
+    <meta
+      name="description"
+      content="Currency Converter for iOS – live exchange rates, smart rate checker to spot unfair offers, favorites, history tracking, and offline last-downloaded rates."
+    />
+    <meta name="theme-color" content="#0a84ff" />
+
+    <!-- Open Graph / Twitter -->
+    <meta
+      property="og:title"
+      content="Currency Converter – Smarter Way to Exchange Money"
+    />
+    <meta
+      property="og:description"
+      content="Get real-time rates, compare offers from kiosks, and avoid hidden losses. Save favorites, track exchanges, and use last-downloaded rates offline."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="app-screenshot.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <style>
+      :root {
+        --bg: #0b0c10;
+        --surface: #101217;
+        --surface-2: #141924;
+        --text: #eaf0ff;
+        --muted: #b6c2e2;
+        --brand: #0a84ff; /* iOS blue vibe */
+        --ok: #2ecc71;
+        --warn: #f39c12;
+        --radius: 18px;
+        --shadow: 0 10px 30px rgba(10, 132, 255, 0.15);
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f7f9ff;
+          --surface: #ffffff;
+          --surface-2: #f0f4ff;
+          --text: #0b132b;
+          --muted: #354b76;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+          Arial, sans-serif;
+        color: var(--text);
+        background: radial-gradient(
+            1200px 600px at 10% -10%,
+            rgba(10, 132, 255, 0.15),
+            transparent
+          ),
+          radial-gradient(
+            1000px 500px at 100% 0%,
+            rgba(123, 97, 255, 0.15),
+            transparent
+          ),
+          var(--bg);
+      }
+      a {
+        color: var(--brand);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 32px 20px 60px;
+      }
+
+      header {
+        display: grid;
+        gap: 14px;
+        align-items: center;
+        grid-template-columns: 70px 1fr auto;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          transparent
+        );
+        padding: 20px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(6px);
+      }
+      .logo {
+        width: 70px;
+        height: 70px;
+        border-radius: 18px;
+        background: linear-gradient(135deg, var(--brand), #7b61ff);
+        display: grid;
+        place-items: center;
+        color: white;
+        font-weight: 800;
+        font-size: 22px;
+        letter-spacing: 0.4px;
+      }
+      .title h1 {
+        margin: 0;
+        font-size: 28px;
+        letter-spacing: 0.2px;
+      }
+      .title p {
+        margin: 4px 0 0;
+        color: var(--muted);
+      }
+      .cta {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-self: end;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 14px;
+        border: 1px solid transparent;
+        background: var(--brand);
+        color: white;
+        font-weight: 600;
+        box-shadow: var(--shadow);
+      }
+      .btn.secondary {
+        background: transparent;
+        color: var(--text);
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+      .btn:focus {
+        outline: 3px solid rgba(10, 132, 255, 0.35);
+        outline-offset: 2px;
+      }
+
+      nav {
+        margin: 22px 0 10px;
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      nav a {
+        padding: 8px 12px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--muted);
+      }
+      nav a:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: var(--text);
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 1fr;
+        margin-top: 18px;
+      }
+      @media (min-width: 840px) {
+        .grid {
+          grid-template-columns: 1.2fr 0.8fr;
+        }
+      }
+
+      section.card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.04),
+          rgba(255, 255, 255, 0.02)
+        );
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 22px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 22px;
+      }
+      h3 {
+        margin: 16px 0 6px;
+        font-size: 18px;
+      }
+      ul {
+        padding-left: 20px;
+        margin: 8px 0;
+      }
+      li {
+        margin: 6px 0;
+      }
+      .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 999px;
+        background: rgba(10, 132, 255, 0.15);
+        color: #dbe9ff;
+        font-weight: 600;
+        font-size: 12px;
+      }
+
+      .feature {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 10px;
+        align-items: start;
+      }
+      .icon {
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        font-weight: 800;
+        font-size: 14px;
+      }
+
+      footer {
+        margin-top: 28px;
+        color: var(--muted);
+        font-size: 14px;
+        text-align: center;
+      }
+      .fineprint {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .kbd {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas,
+          "Liberation Mono", monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper" role="main">
+      <header aria-label="App header">
+        <div class="logo" aria-hidden="true">CC</div>
+        <div class="title">
+          <h1>Currency Converter</h1>
+          <p>
+            Smarter way to exchange money — live rates, scam-checking, and
+            offline confidence.
+          </p>
+        </div>
+        <div class="cta">
+          <a class="btn" href="#download" aria-label="Download on the App Store"
+            >Download</a
+          >
+          <a class="btn secondary" href="#support" aria-label="Contact Support"
+            >Support</a
+          >
+        </div>
+      </header>
+
+      <nav aria-label="Secondary navigation">
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#example">Example</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="grid">
+        <section id="about" class="card" aria-labelledby="about-title">
+          <h2 id="about-title">About the App</h2>
+          <p>
+            <strong>Currency Converter</strong> for iOS gives you accurate,
+            real‑time exchange rates and a built‑in fairness check so you always
+            know the real value of your money. Whether you’re traveling,
+            shopping online, or tracking currencies, the app makes conversions
+            fast, transparent, and stress‑free.
+          </p>
+          <p class="badge" aria-label="Available on iPhone">iPhone</p>
+        </section>
+
+        <section
+          id="highlights"
+          class="card"
+          aria-labelledby="highlights-title"
+        >
+          <h2 id="highlights-title">Highlights</h2>
+          <div class="feature">
+            <div class="icon" aria-hidden="true">🌍</div>
+            <div>
+              <strong>Live Exchange Rates</strong><br />Track hundreds of
+              currencies with up‑to‑the‑minute accuracy.
+            </div>
+          </div>
+          <div class="feature">
+            <div class="icon" aria-hidden="true">🔍</div>
+            <div>
+              <strong>Smart Rate Checker</strong><br />Enter a kiosk’s offered
+              rate to see if it’s fair — and how much you could be losing.
+            </div>
+          </div>
+          <div class="feature">
+            <div class="icon" aria-hidden="true">⭐</div>
+            <div>
+              <strong>Favorites & History</strong><br />Save your most‑used
+              pairs and keep a log of your past conversions.
+            </div>
+          </div>
+          <div class="feature">
+            <div class="icon" aria-hidden="true">📶</div>
+            <div>
+              <strong>Offline Confidence</strong><br />Use the
+              <em>last downloaded</em> rates when you’re offline or in
+              low‑connectivity areas.
+            </div>
+          </div>
+          <div class="feature">
+            <div class="icon" aria-hidden="true">🎯</div>
+            <div>
+              <strong>Clean, Intuitive UI</strong><br />Designed for speed and
+              clarity — switch currencies and get answers instantly.
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section id="features" class="card" aria-labelledby="features-title">
+        <h2 id="features-title">Features in Detail</h2>
+        <ul>
+          <li>
+            <strong>Live Exchange Rates:</strong> Real‑time rates for global
+            currencies with precise conversions.
+          </li>
+          <li>
+            <strong>Custom Rate Comparison:</strong> Type the rate you’re
+            offered and see the difference vs. market rate, including potential
+            loss.
+          </li>
+          <li>
+            <strong>Save Favorite Pairs:</strong> Pin your go‑to currencies for
+            one‑tap access.
+          </li>
+          <li>
+            <strong>Track Your Exchanges:</strong> View recent calculations and
+            keep notes for future reference.
+          </li>
+          <li>
+            <strong>Offline Last‑Downloaded Rates:</strong> Handy when traveling
+            or without internet.
+          </li>
+        </ul>
+      </section>
+
+      <section id="example" class="card" aria-labelledby="example-title">
+        <h2 id="example-title">Real‑World Example</h2>
+        <p>
+          You’re in <strong>Bali</strong>. A kiosk offers
+          <span class="kbd">13,200 IDR</span> for
+          <span class="kbd">1 USD</span> while the market rate is
+          <span class="kbd">15,000 IDR</span>. Enter their rate in the app:
+          instantly see how much you’d lose, helping you negotiate or find a
+          better deal nearby.
+        </p>
+        <p class="fineprint">
+          Note: Market rates change throughout the day. Always refresh to ensure
+          you’re using the latest data when online.
+        </p>
+      </section>
+
+      <section id="privacy" class="card" aria-labelledby="privacy-title">
+        <h2 id="privacy-title">Privacy</h2>
+        <p>
+          We value your privacy. The app does not require personal accounts to
+          function and stores your favorites and history securely on your
+          device. Rate data is fetched from trusted sources when online.
+        </p>
+      </section>
+
+      <section id="faq" class="card" aria-labelledby="faq-title">
+        <h2 id="faq-title">FAQ</h2>
+        <h3>Does it work offline?</h3>
+        <p>
+          Yes — you can use your <em>last downloaded</em> rates without
+          internet. For the most accurate results, connect to refresh.
+        </p>
+        <h3>Can I compare a custom rate from a kiosk?</h3>
+        <p>
+          Absolutely. Enter the offered rate to see if it’s fair and how it
+          compares to the market rate.
+        </p>
+        <h3>Which currencies are supported?</h3>
+        <p>
+          Hundreds of global currencies. Favorites make the ones you care about
+          one tap away.
+        </p>
+      </section>
+
+      <section id="contact" class="card" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact & Support</h2>
+        <p id="support">Questions or feedback? We’d love to hear from you.</p>
+        <ul>
+          <li>
+            Email:
+            <a href="mailto:support@yourappdomain.com"
+              >support@yourappdomain.com</a
+            >
+          </li>
+          <li>
+            X/Twitter:
+            <a href="https://x.com/yourhandle" rel="noopener">@yourhandle</a>
+          </li>
+        </ul>
+        <div
+          id="download"
+          style="margin-top: 12px; display: flex; gap: 10px; flex-wrap: wrap"
+        >
+          <a class="btn" href="#" aria-label="Get the app on the App Store"
+            >App Store</a
+          >
+          <a class="btn secondary" href="#" aria-label="View the Privacy Policy"
+            >Privacy Policy</a
+          >
+        </div>
+        <p class="fineprint" style="margin-top: 10px">
+          © <span id="year"></span> Currency Converter. All rights reserved.
+        </p>
+      </section>
+
+      <footer>
+        Built for travelers, shoppers, and anyone who wants fair, transparent
+        currency conversion.
+      </footer>
+    </div>
+
+    <script>
+      // Accessibility & polish
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <!-- JSON‑LD for rich snippets -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Currency Converter",
+        "operatingSystem": "iOS",
+        "applicationCategory": "FinanceApplication",
+        "description": "Live exchange rates, smart rate checker to spot unfair offers, favorites, history, and offline last-downloaded rates.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    </script>
+  </body>
+</html>
