@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="GlowUp: Professional Headshots – The ultimate AI photo editor with vintage filters, face swaps, skin retouching, cartoon effects, and high-res avatars. Try Premium FREE for 7 days."
+    />
+    <title>GlowUp: AI Headshots & Photo Editor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- CSS Variables for Easy Customization --- */
+      :root {
+        --primary-color: #007aff;
+        --background-dark: #121212;
+        --background-light: #ffffff;
+        --text-dark: #1d1d1f;
+        --text-light: #f5f5f7;
+        --card-background: #1c1c1e;
+        --border-color: rgba(255, 255, 255, 0.1);
+        --footer-background: #f2f2f2;
+      }
+
+      /* --- General Body Styles --- */
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-dark);
+        color: var(--text-light);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* --- Layout & Containers --- */
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+      }
+
+      /* --- Header Section --- */
+      header {
+        background: linear-gradient(
+          45deg,
+          #4a00e0,
+          #8e2de2,
+          #007aff
+        ); /* Vibrant Gradient */
+        padding: 6rem 1.5rem;
+        text-align: center;
+        color: white;
+      }
+
+      header h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      header p {
+        font-size: 1.25rem;
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+        opacity: 0.9;
+      }
+
+      /* --- Buttons --- */
+      .cta-button {
+        display: inline-block;
+        background-color: var(--background-light);
+        color: var(--text-dark);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      /* --- Section Styling --- */
+      section {
+        border-bottom: 1px solid var(--border-color);
+      }
+      section:last-of-type {
+        border-bottom: none;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--text-light);
+      }
+
+      /* --- Features Grid --- */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-card {
+        background-color: var(--card-background);
+        padding: 2rem;
+        border-radius: 16px;
+        border: 1px solid var(--border-color);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-color);
+      }
+
+      .feature-card .icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1.25rem;
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+        color: var(--text-light);
+      }
+
+      .feature-card p {
+        font-size: 1rem;
+        color: #aeaeae;
+        margin-bottom: 0;
+      }
+
+      /* --- Showcase Section --- */
+      .showcase-steps {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        text-align: center;
+        gap: 2rem;
+      }
+      .step {
+        flex: 1;
+        min-width: 250px;
+      }
+      .step img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 16px;
+        margin-bottom: 1rem;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        background-color: var(--card-background);
+      }
+      .step h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* --- Premium/Pricing Section --- */
+      .premium-section {
+        background-color: var(--background-light);
+        color: var(--text-dark);
+      }
+      .premium-section h2,
+      .premium-section h3 {
+        color: var(--text-dark);
+      }
+
+      .pricing-card {
+        background-color: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        border-radius: 20px;
+        padding: 2.5rem;
+        text-align: center;
+        max-width: 500px;
+        margin: 0 auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      }
+
+      .pricing-card ul {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+        text-align: left;
+        display: inline-block;
+      }
+
+      .pricing-card li {
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .pricing-card .cta-button {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .pricing-card .price-info {
+        font-size: 1rem;
+        color: #666;
+        margin-top: 1.5rem;
+      }
+
+      /* --- Footer Section --- */
+      footer {
+        background: var(--footer-background);
+        padding: 3rem 1.5rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #666;
+      }
+      footer p {
+        margin: 0 0 1rem 0;
+      }
+      footer .legal-links a {
+        color: #666;
+        text-decoration: none;
+        margin: 0 0.75rem;
+      }
+      footer .legal-links a:hover {
+        color: var(--primary-color);
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>GlowUp: AI Headshots & Photo Editor</h1>
+      <p style="font-size: 2rem; font-weight: 600">🎨</p>
+      <p>
+        Create stunning professional headshots, viral avatars, and artistic
+        portraits with the power of AI.
+      </p>
+      <a href="https://apps.apple.com/app/id6752693666" class="cta-button"
+        >Download on the App Store</a
+      >
+    </header>
+
+    <main>
+      <section class="container">
+        <h2>Your All-in-One AI Photo Studio</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="icon">📸</div>
+            <h3>Professional Headshots</h3>
+            <p>
+              Generate corporate headshots and professional portraits in various
+              styles from a single selfie.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">✨</div>
+            <h3>Flawless Skin Retouch</h3>
+            <p>
+              Effortlessly remove blemishes, smooth skin, and erase unwanted
+              objects for a perfect finish.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🎩</div>
+            <h3>AI Accessories</h3>
+            <p>
+              Try on new looks by adding realistic hats, glasses, jewelry, and
+              more to your photos.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="icon">🎭</div>
+            <h3>AI Face Swap & Avatars</h3>
+            <p>
+              Become anyone or anything. Create hyper-realistic avatars or
+              surreal artistic swaps.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🎨</div>
+            <h3>Cartoonify Yourself</h3>
+            <p>
+              Transform your photos into amazing cartoons, anime characters, or
+              hand-drawn sketches.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🎞️</div>
+            <h3>Retro & Vintage Filters</h3>
+            <p>
+              Relive every era with 90s VHS, film grain, disco glow, and other
+              nostalgic effects.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🚀</div>
+            <h3>Animate Your Photos</h3>
+            <p>
+              Bring your static images to life! Make your portraits smile, wink,
+              or talk with our AI animation.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">⏳</div>
+            <h3>Time Travel Selfies</h3>
+            <p>
+              See yourself older, younger, or in a completely different
+              historical timeline.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container">
+        <h2>See the Magic in 3 Simple Steps</h2>
+        <div class="showcase-steps">
+          <div class="step">
+            <img
+              src="https://via.placeholder.com/300x300.png?text=Your+Photo"
+              alt="A regular portrait photo before editing"
+            />
+            <h3>1. Upload Your Photo</h3>
+            <p>Start with any selfie or portrait from your gallery.</p>
+          </div>
+          <div class="step">
+            <img
+              src="https://via.placeholder.com/300x300.png?text=Choose+a+Style"
+              alt="A grid of different art styles to choose from"
+            />
+            <h3>2. Choose a Style</h3>
+            <p>
+              Select from hundreds of effects, from "Professional" to "Cartoon".
+            </p>
+          </div>
+          <div class="step">
+            <img
+              src="https://via.placeholder.com/300x300.png?text=AI+Masterpiece"
+              alt="A stunning AI-generated headshot"
+            />
+            <h3>3. Get Your Masterpiece</h3>
+            <p>Watch as our AI transforms your image in seconds.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="container premium-section">
+        <h2>💎 Go Premium – Try 1 Week FREE</h2>
+        <div class="pricing-card">
+          <h3>Unlock the Full Creative Experience</h3>
+          <ul>
+            <li>✅ Unlimited AI generations</li>
+            <li>✅ High-resolution 4K exports</li>
+            <li>✅ Exclusive premium filters and avatar styles</li>
+            <li>✅ Ad-free experience</li>
+            <li>✅ Priority access to new features</li>
+          </ul>
+          <a href="#" class="cta-button">Start Your 7-Day Free Trial</a>
+          <p class="price-info">
+            After the free trial, it's only $6.99/week or save big with
+            $39.99/year. Cancel anytime.
+          </p>
+        </div>
+      </section>
+
+      <section class="container">
+        <div style="text-align: center">
+          <h2>Ready to Create?</h2>
+          <p style="max-width: 600px; margin: 0 auto 2rem auto; color: #aeaeae">
+            Join thousands of creators transforming their photos with smart AI
+            tools. Available exclusively on the App Store.
+          </p>
+          <a
+            href="https://apps.apple.com/app/id6752693666"
+            class="cta-button"
+            style="background-color: var(--primary-color); color: white"
+            >Download GlowUp Now →</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="legal-links">
+        <a
+          href="https://octagonal-apogee-39a.notion.site/Support-Page-2525a820055180a98904edcf5e70418f?pvs=74"
+          >Support</a
+        >
+        <a
+          href="https://octagonal-apogee-39a.notion.site/Privacy-Policy-2445a820055180aab3dfd51fb734bf67?pvs=73"
+          >Privacy Policy</a
+        >
+        <a
+          href="https://octagonal-apogee-39a.notion.site/Terms-of-Use-2445a820055180c08927fc2b62832c47?pvs=73"
+          >Terms of Use</a
+        >
+      </div>
+      <p>
+        For inquiries, contact us at:
+        <a href="mailto:evermakers.ai@gmail.com?subject=GlowUp%20App%20Support"
+          >evermakers.ai@gmail.com</a
+        >
+      </p>
+      <p>© 2025 GlowUp: AI Headshots & Photo Editor</p>
+    </footer>
+  </body>
+</html>
