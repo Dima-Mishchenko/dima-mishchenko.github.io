@@ -1,6 +1,6 @@
 {
   "urls": ["https://photo-app-us-545480301228.us-central1.run.app"],
-  "weeklyVideoLimit": 15,
-  "triaVideolLimit": 2,
-  "trialPhotoLimitPerDay": 10
+  "weeklyVideoLimit": 10,
+  "triaVideolLimit": 1,
+  "trialPhotoLimitPerDay": 8
 }
