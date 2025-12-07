@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AniCore App Landing</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background: linear-gradient(
+          180deg,
+          #f7f5ff 0%,
+          #f0f6ff 40%,
+          #ffffff 100%
+        );
+        color: #2a2a2a;
+      }
+      header {
+        padding: 24px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        text-align: center;
+      }
+      .hero img {
+        width: 320px;
+        border-radius: 20px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      }
+      h1 {
+        font-size: 40px;
+        margin: 20px 0 10px;
+        background: linear-gradient(90deg, #74d1ff, #b57bff);
+        -webkit-background-clip: text;
+        color: transparent;
+        font-weight: 800;
+      }
+      p.subtitle {
+        font-size: 18px;
+        max-width: 700px;
+        text-align: center;
+        opacity: 0.85;
+        line-height: 1.6;
+      }
+      .btn-store {
+        margin-top: 26px;
+        padding: 14px 28px;
+        font-size: 18px;
+        border-radius: 14px;
+        background: #ff4edb;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 6px 14px rgba(255, 78, 219, 0.4);
+        transition: 0.2s;
+      }
+      .btn-store:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(255, 78, 219, 0.4);
+      }
+
+      /* FEATURES */
+      section.features {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .feature {
+        background: rgba(255, 255, 255, 0.6);
+        padding: 24px;
+        margin: 20px 0;
+        border-radius: 18px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      }
+      .feature h2 {
+        margin: 0 0 10px;
+        font-size: 24px;
+        color: #6b49ff;
+      }
+
+      /* STYLE GALLERY */
+      .styles {
+        padding: 60px 20px;
+        text-align: center;
+      }
+      .styles h2 {
+        font-size: 32px;
+        margin-bottom: 10px;
+      }
+      .styles p {
+        color: #666;
+        margin-bottom: 30px;
+        font-size: 17px;
+      }
+      .style-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 16px;
+        max-width: 900px;
+        margin: auto;
+      }
+      .style-item {
+        padding: 14px 20px;
+        background: #ffffffaa;
+        border-radius: 14px;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+        backdrop-filter: blur(8px);
+      }
+
+      /* VALUE SECTION */
+      .power {
+        padding: 60px 20px;
+        text-align: center;
+        max-width: 900px;
+        margin: auto;
+      }
+      .power h2 {
+        font-size: 32px;
+      }
+      .power-features {
+        list-style: none;
+        padding: 0;
+        margin: 20px auto 0;
+        max-width: 500px;
+        text-align: left;
+      }
+      .power-features li {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+
+      /* FOOTER LINKS */
+      .links {
+        margin-top: 40px;
+        text-align: center;
+        padding-bottom: 60px;
+      }
+      .links a {
+        display: block;
+        margin: 8px 0;
+        color: #4b48ff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a target="_blank" href="https://apps.apple.com/app/id6754006952"
+        ><strong>AniCore</strong></a
+      >
+      — AI Cartoon & Anime Generator + Editor
+    </header>
+
+    <div class="hero">
+      <img src="app.png" alt="App Screenshot" />
+      <h1>AniCore</h1>
+      <p class="subtitle">
+        Turn any photo into stunning anime and cartoon artwork — with 30+ styles
+        and full editing tools to refine your creations even further.
+      </p>
+      <a class="btn-store" href="https://apps.apple.com/app/id6754006952">
+        Download on App Store
+      </a>
+    </div>
+
+    <section class="features">
+      <div class="feature">
+        <h2>AI-Powered Anime & Cartoon Styles</h2>
+        <p>
+          Create beautifully stylized images inspired by premium illustration
+          aesthetics.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h2>Full Editing Suite</h2>
+        <p>
+          Adjust colors, lighting, detail, and composition — refine your AI
+          artwork your way.
+        </p>
+      </div>
+
+      <div class="feature">
+        <h2>Dozens of Styles</h2>
+        <p>Fantasy, dreamy, cyberpunk, watercolor, painterly, and more.</p>
+      </div>
+    </section>
+
+    <section class="styles">
+      <h2>Explore 60+ Unique Styles</h2>
+      <p>
+        From cute Kawaii to dramatic Shōnen, cinematic 3D, vaporwave, and more.
+      </p>
+
+      <div class="style-grid">
+        <div class="style-item">Kawaii</div>
+        <div class="style-item">Shōnen</div>
+        <div class="style-item">Shōjo</div>
+        <div class="style-item">Seinen</div>
+        <div class="style-item">Josei</div>
+        <div class="style-item">Pixar 3D</div>
+        <div class="style-item">Dark Fantasy</div>
+        <div class="style-item">Steampunk</div>
+        <div class="style-item">Opulent</div>
+        <div class="style-item">Vaporwave</div>
+        <div class="style-item">Cyberpastel</div>
+        <div class="style-item">Fairytale</div>
+        <div class="style-item">Classic Art</div>
+        <div class="style-item">Isekai</div>
+        <div class="style-item">Mecha Pilot</div>
+      </div>
+    </section>
+
+    <section class="power">
+      <h2>More Than a Cartoon Filter</h2>
+      <p>
+        Create your style, generate artwork, and keep editing — all in one
+        smooth workflow.
+      </p>
+
+      <ul class="power-features">
+        <li>✔ Edit after generation</li>
+        <li>✔ 30+ anime & cartoon styles</li>
+        <li>✔ Adjustable lighting & color controls</li>
+        <li>✔ High-quality rendering engine</li>
+      </ul>
+    </section>
+
+    <div class="links">
+      <h3>App Store</h3>
+      <a href="https://apps.apple.com/app/id6754006952">AniCore — App Page</a>
+    </div>
+  </body>
+</html>
