@@ -3,5 +3,6 @@
   "weeklyVideoLimit": 10,
   "triaVideolLimit": 0,
   "trialPhotoLimitPerDay": 8,
+  "animeTrialPhotoLimitPerDay": 5,
   "freeUsageLimit": 2
 }
