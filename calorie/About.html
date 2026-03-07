@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calories Tracker - Support Center</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #ff6b6b;
+        --secondary-color: #4ecdc4;
+        --accent-color: #ffe66d;
+        --text-dark: #2c3e50;
+        --text-light: #7f8c8d;
+        --background: #f8f9fa;
+        --card-bg: #ffffff;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+        --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background: var(--background);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+        box-shadow: var(--shadow-lg);
+      }
+
+      header h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+        font-weight: 800;
+      }
+
+      header p {
+        font-size: 1.3rem;
+        opacity: 0.95;
+        font-weight: 300;
+      }
+
+      .app-icon {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px;
+        background: white;
+        border-radius: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        box-shadow: var(--shadow-lg);
+        overflow: hidden;
+      }
+
+      .app-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Navigation */
+      nav {
+        background: var(--card-bg);
+        padding: 20px 0;
+        box-shadow: var(--shadow);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      nav a {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+        font-size: 1rem;
+      }
+
+      nav a:hover {
+        color: var(--primary-color);
+      }
+
+      /* Main Content */
+      main {
+        padding: 60px 0;
+      }
+
+      section {
+        margin-bottom: 80px;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 30px;
+        color: var(--text-dark);
+        text-align: center;
+        font-weight: 800;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--primary-color);
+        font-weight: 700;
+      }
+
+      /* Feature Grid */
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .feature-card {
+        background: var(--card-bg);
+        padding: 35px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        display: block;
+      }
+
+      .feature-mascot {
+        width: 100%;
+        max-width: 200px;
+        height: auto;
+        margin: 0 auto 20px;
+        display: block;
+      }
+
+      .hero-mascot {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        margin: 30px auto;
+        display: block;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .app-store-badge {
+        height: 50px;
+        margin: 10px;
+      }
+
+      .screenshot-container {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        padding: 20px 0;
+        scroll-snap-type: x mandatory;
+      }
+
+      .screenshot {
+        flex: 0 0 auto;
+        width: 250px;
+        border-radius: 20px;
+        box-shadow: var(--shadow-lg);
+        scroll-snap-align: center;
+      }
+
+      .gradient-section {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 107, 107, 0.1),
+          rgba(78, 205, 196, 0.1)
+        );
+        padding: 60px 0;
+        margin: 60px 0;
+        border-radius: 30px;
+      }
+
+      .feature-card h3 {
+        color: var(--text-dark);
+        margin-bottom: 15px;
+      }
+
+      .feature-card p {
+        color: var(--text-light);
+        line-height: 1.7;
+      }
+
+      /* FAQ Section */
+      .faq-item {
+        background: var(--card-bg);
+        padding: 30px;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        box-shadow: var(--shadow);
+      }
+
+      .faq-item h3 {
+        color: var(--text-dark);
+        margin-bottom: 12px;
+      }
+
+      .faq-item p {
+        color: var(--text-light);
+        line-height: 1.8;
+      }
+
+      .faq-item ul {
+        margin: 15px 0;
+        padding-left: 25px;
+      }
+
+      .faq-item ul li {
+        margin: 8px 0;
+      }
+
+      .faq-item strong {
+        color: var(--text-dark);
+      }
+
+      /* CTA Buttons */
+      .cta-container {
+        text-align: center;
+        margin: 50px 0;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 15px 40px;
+        margin: 10px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+        box-shadow: var(--shadow);
+      }
+
+      .btn-primary {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #ff5252;
+        box-shadow: var(--shadow-lg);
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background: var(--card-bg);
+        color: var(--text-dark);
+        border: 2px solid var(--primary-color);
+      }
+
+      .btn-secondary:hover {
+        background: var(--primary-color);
+        color: white;
+      }
+
+      /* Contact Section */
+      .contact-info {
+        background: var(--card-bg);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        text-align: center;
+      }
+
+      .contact-info a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      .contact-info a:hover {
+        text-decoration: underline;
+      }
+
+      .contact-info ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .contact-info ul li {
+        margin: 10px 0;
+        font-size: 1.05rem;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--text-dark);
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      footer a {
+        color: var(--accent-color);
+        text-decoration: none;
+        margin: 0 15px;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-links {
+        margin-top: 20px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        header p {
+          font-size: 1rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        .feature-grid {
+          grid-template-columns: 1fr;
+        }
+
+        nav ul {
+          gap: 15px;
+        }
+      }
+
+      .highlight {
+        background: linear-gradient(
+          120deg,
+          var(--accent-color) 0%,
+          var(--accent-color) 100%
+        );
+        background-repeat: no-repeat;
+        background-size: 100% 40%;
+        background-position: 0 85%;
+        padding: 0 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="app-icon">
+          <img
+            src="support-assets/app-logo.png"
+            alt="Calorie Tracker App Icon"
+          />
+        </div>
+        <h1>Calories Tracker</h1>
+        <p>Support Center</p>
+      </div>
+    </header>
+
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#premium">Premium</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#download">Download</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <!-- Overview -->
+        <section id="overview">
+          <h2>Welcome to <span class="highlight">Calories Tracker</span></h2>
+          <p
+            style="
+              text-align: center;
+              font-size: 1.2rem;
+              color: var(--text-light);
+              max-width: 800px;
+              margin: 0 auto;
+            "
+          >
+            Your simple and reliable app for tracking calories, nutrition, and
+            progress. If you're experiencing issues, have questions about
+            subscriptions, data tracking, or want to share feedback, we're here
+            to help.
+          </p>
+          <img
+            src="support-assets/capy-eat.png"
+            alt="Calorie Tracker Mascot"
+            class="hero-mascot"
+          />
+        </section>
+
+        <!-- Premium -->
+        <section id="premium">
+          <h2>About Premium</h2>
+          <div class="contact-info">
+            <p style="margin-bottom: 20px; color: var(--text-light)">
+              Upgrade to <strong>Calories Tracker Premium</strong> to unlock
+              additional features such as:
+            </p>
+            <div style="max-width: 600px; margin: 0 auto; text-align: left">
+              <ul
+                style="
+                  color: var(--text-dark);
+                  line-height: 2;
+                  font-size: 1.1rem;
+                "
+              >
+                <li>✅ Advanced tracking tools</li>
+                <li>✅ Detailed summaries and insights</li>
+                <li>✅ Extended customization options</li>
+                <li>✅ Priority support</li>
+              </ul>
+            </div>
+            <p style="margin-top: 30px; color: var(--text-light)">
+              <strong>Try for FREE or subscribe</strong><br />
+              Weekly or yearly plans available • Cancel anytime via your App
+              Store settings
+            </p>
+          </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features">
+          <h2>Key Features</h2>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <img
+                src="support-assets/capy-scan.png"
+                alt="AI Photo Recognition"
+                class="feature-mascot"
+              />
+              <h3>Simple Calorie Tracking</h3>
+              <p>
+                Log meals and track daily calorie intake quickly and easily.
+                Snap a photo or type what you ate.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <span class="feature-icon">📊</span>
+              <h3>Progress & Insights</h3>
+              <p>
+                Visualize your progress with clear summaries, trends, and daily
+                goals.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <span class="feature-icon">🔐</span>
+              <h3>Privacy-First Design</h3>
+              <p>
+                Data is used only to provide app functionality. No personal
+                identity tracking. No data sold or shared with advertisers.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <img
+                src="support-assets/capy-water.png"
+                alt="Water Tracking"
+                class="feature-mascot"
+              />
+              <h3>Complete Nutrition Tracking</h3>
+              <p>
+                Track calories, macronutrients (protein, carbs, fats), and over
+                25 micronutrients including vitamins and minerals.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <span class="feature-icon">🎯</span>
+              <h3>Daily Goals & Progress</h3>
+              <p>
+                Set personalized calorie targets and track your daily progress
+                with beautiful visualizations.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <span class="feature-icon">🏃</span>
+              <h3>Activity Tracking</h3>
+              <p>
+                Monitor your steps and calories burned. Integrate with Apple
+                Health for comprehensive fitness tracking.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works">
+          <h2>How It Works</h2>
+          <div class="feature-grid">
+            <div class="feature-card">
+              <span class="feature-icon">📸</span>
+              <h3>1. Log Your Food</h3>
+              <p>
+                Take a photo of your meal or type what you ate. Our AI
+                recognizes food items and portion sizes automatically.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <span class="feature-icon">⚡</span>
+              <h3>2. Get Instant Analysis</h3>
+              <p>
+                Receive detailed nutritional information including calories,
+                macros, micros, glycemic index, and health scores.
+              </p>
+            </div>
+
+            <div class="feature-card">
+              <span class="feature-icon">📊</span>
+              <h3>3. Track Your Progress</h3>
+              <p>
+                View your daily totals, compare against goals, and get
+                personalized recommendations for optimal nutrition.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>1. How do I restore my Premium subscription?</h3>
+            <ul style="color: var(--text-light); line-height: 1.8">
+              <li>Open the App</li>
+              <li>
+                Go to <strong>Settings</strong> or <strong>Premium</strong>
+              </li>
+              <li>Tap <strong>"Restore Purchases"</strong></li>
+              <li>
+                Make sure you're signed in with the Apple ID used for the
+                purchase
+              </li>
+            </ul>
+          </div>
+
+          <div class="faq-item">
+            <h3>2. My data is not syncing or saving</h3>
+            <p>Please try the following:</p>
+            <ul style="color: var(--text-light); line-height: 1.8">
+              <li>Ensure you have a stable internet connection</li>
+              <li>Keep the app updated to the latest version</li>
+              <li>Restart the app and try again</li>
+              <li>Make sure background app refresh is enabled</li>
+            </ul>
+            <p>If the issue persists, contact support.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>3. Calorie or nutrition values don't seem accurate</h3>
+            <p>Calorie tracking accuracy may be affected by:</p>
+            <ul style="color: var(--text-light); line-height: 1.8">
+              <li>Incorrect or incomplete food entries</li>
+              <li>Portion size estimates</li>
+              <li>Differences between food brands or preparation methods</li>
+              <li>User-entered data</li>
+            </ul>
+            <p>
+              For best results, double-check quantities and food selections.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>4. The app crashes or freezes</h3>
+            <ul style="color: var(--text-light); line-height: 1.8">
+              <li>Restart the app</li>
+              <li>Update to the latest app version</li>
+              <li>Restart your device</li>
+            </ul>
+            <p>If the issue continues, please email us with:</p>
+            <ul style="color: var(--text-light); line-height: 1.8">
+              <li>Your device model</li>
+              <li>iOS version</li>
+              <li>App version</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Download CTA -->
+        <section id="download">
+          <div class="gradient-section">
+            <div class="cta-container">
+              <h2>Ready to Start Your Health Journey?</h2>
+              <p
+                style="
+                  text-align: center;
+                  color: var(--text-light);
+                  margin-bottom: 30px;
+                  font-size: 1.1rem;
+                "
+              >
+                Download now and take control of your nutrition
+              </p>
+              <div style="margin-bottom: 20px">
+                <a
+                  href="https://apps.apple.com/app/your-app-id"
+                  target="_blank"
+                >
+                  <img
+                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                    alt="Download on the App Store"
+                    class="app-store-badge"
+                  />
+                </a>
+              </div>
+              <a href="#contact" class="btn btn-secondary">Get Support</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+          <h2>Contact Us</h2>
+          <div class="contact-info">
+            <p style="margin-bottom: 20px; color: var(--text-light)">
+              For support requests, subscription questions, feature suggestions,
+              or bug reports, please contact us at:
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:kelebronofficial@gmail.com"
+                >kelebronofficial@gmail.com</a
+              >
+            </p>
+            <p style="margin-top: 15px">
+              <strong>Response Time:</strong> 1–2 business days
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Calories Tracker. All rights reserved.</p>
+        <div class="footer-links">
+          <a
+            href="https://octagonal-apogee-39a.notion.site/Privacy-Policy-2f95a820055180c4a7d7cffab1dd6f09?pvs=73"
+            target="_blank"
+            >Privacy Policy</a
+          >
+          <a
+            href="https://octagonal-apogee-39a.notion.site/Terms-of-Use-1-2f95a820055180b49d44d83380e328b6"
+            target="_blank"
+            >Terms of Use</a
+          >
+          <a href="#contact">Support</a>
+          <a href="mailto:kelebronofficial@gmail.com">Contact Us</a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8">
+          Made with ❤️ for healthier living
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
