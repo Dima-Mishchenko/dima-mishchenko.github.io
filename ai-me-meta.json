@@ -8,6 +8,6 @@
   "trialPhotoLimitPerDay": 10,
   "animeTrialPhotoLimitPerDay": 12,
   "freeUsageLimit": 2,
-  "trialPhotoLimit": 22,
-  "trialBarcodeLimit": 18
+  "trialPhotoLimit": 32,
+  "trialBarcodeLimit": 28
 }
