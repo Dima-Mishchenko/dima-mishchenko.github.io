@@ -1,6 +1,5 @@
 {
   "urls": [
-    "https://photo-app-us-907234900131.us-central1.run.app",
     "https://photo-app-us-644476107788.us-central1.run.app",
     "https://photo-app-us-545480301228.us-central1.run.app"
   ],
@@ -8,7 +7,7 @@
   "triaVideolLimit": 0,
   "trialPhotoLimitPerDay": 10,
   "animeTrialPhotoLimitPerDay": 12,
-  "freeUsageLimit": 2,
+  "freeUsageLimit": 1,
   "trialPhotoLimit": 42,
   "trialBarcodeLimit": 28
 }
