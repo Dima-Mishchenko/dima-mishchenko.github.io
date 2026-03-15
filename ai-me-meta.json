@@ -8,7 +8,7 @@
   "triaVideolLimit": 0,
   "trialPhotoLimitPerDay": 8,
   "animeTrialPhotoLimitPerDay": 12,
-  "freeUsageLimit": 1,
+  "freeUsageLimit": 2,
   "trialPhotoLimit": 42,
   "trialBarcodeLimit": 28
 }
