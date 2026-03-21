@@ -10,5 +10,6 @@
   "animeTrialPhotoLimitPerDay": 12,
   "freeUsageLimit": 2,
   "trialPhotoLimit": 42,
-  "trialBarcodeLimit": 28
+  "trialBarcodeLimit": 28,
+  "trialPillsCountLimit": 5
 }
