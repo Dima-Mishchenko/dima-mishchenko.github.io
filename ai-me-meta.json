@@ -12,5 +12,6 @@
   "trialPhotoLimit": 5,
   "trialBarcodeLimit": 5,
   "trialPillsCountLimit": 5,
-  "trialPillsSearchLimit": 15
+  "trialPillsSearchLimit": 15,
+  "allowManualSearchOfFood": false
 }
