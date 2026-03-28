@@ -9,8 +9,8 @@
   "trialPhotoLimitPerDay": 8,
   "animeTrialPhotoLimitPerDay": 12,
   "freeUsageLimit": 2,
-  "trialPhotoLimit": 5,
-  "trialBarcodeLimit": 5,
+  "trialPhotoLimit": 6,
+  "trialBarcodeLimit": 6,
   "trialPillsCountLimit": 5,
   "trialPillsSearchLimit": 15,
   "allowManualSearchOfFood": false
