@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Y2K - Future Retro AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="gradient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">Y2K<span>AI</span></div>
+        <div class="nav-links">
+            <a href="#vision">Vision</a>
+            <a href="#magic">Magic</a>
+            <a href="#gallery">Gallery</a>
+            <a href="https://apps.apple.com/app/id6754498301" class="btn-small">Download</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="glitch-text" data-text="STEP INTO THE NEW ERA">STEP INTO THE NEW ERA</h1>
+                <p class="subtitle">Experience the high-fashion aesthetic of the 2000s, reimagined with cutting-edge artificial intelligence.</p>
+                <a href="https://apps.apple.com/app/id6754498301" class="cta-button">DOWNLOAD NOW</a>
+            </div>
+            <div class="hero-image-container">
+                <img src="images/hero.jpg" alt="Hero Aesthetic" class="floating-img">
+            </div>
+        </section>
+
+        <section id="vision" class="glass-section">
+            <div class="content-wrapper">
+                <h2>OUR VISION</h2>
+                <div class="vision-grid">
+                    <div class="vision-card">
+                        <h3>Cyber-Glam</h3>
+                        <p>Blending industrial aesthetics with high-fashion gloss. We bring the matrix to your smartphone.</p>
+                    </div>
+                    <div class="vision-card">
+                        <h3>Future-Proof</h3>
+                        <p>Nostalgia is just the beginning. Our AI models are built for the next decade of digital art.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="magic" class="feature-section">
+            <div class="feature-content">
+                <div class="feature-text">
+                    <h2>THE AI MAGIC</h2>
+                    <p>From complex prompt engineering to real-time style transfers, we've distilled the essence of Y2K into a single tap.</p>
+                    <ul class="feature-list">
+                        <li><span>✦</span> Ultra-HD Upscaling</li>
+                        <li><span>✦</span> Authentic Film Grain</li>
+                        <li><span>✦</span> Dynamic Mesh Edits</li>
+                    </ul>
+                </div>
+                <div class="feature-visual">
+                    <img src="images/style1.jpg" alt="AI Transformation" class="glass-frame">
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery-section">
+            <h2>GALLERY</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/style2.jpg" alt="Style 2"></div>
+                <div class="gallery-item"><img src="images/style3.jpg" alt="Style 3"></div>
+                <div class="gallery-item"><img src="images/hero.jpg" alt="Style 4"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Y2K AI REVOLUTION. ALL RIGHTS RESERVED.</p>
+        <div class="footer-links">
+            <a href="https://apps.apple.com/app/id6754498301" class="app-store-link">Available on the App Store</a>
+        </div>
+    </footer>
+
+    <script>
+        // Subtle micro-animations
+        document.querySelectorAll('.vision-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body>
+</html>
