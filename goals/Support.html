@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goals App - Help & Support Center</title>
+    <style>
+      :root {
+        --primary: #ff6b35; /* Orange accent */
+        --primary-gradient: linear-gradient(135deg, #ff6b35, #ff9f1c);
+        --bg-dark: #0f0f11;
+        --card-bg: #18181c;
+        --card-border: rgba(255, 255, 255, 0.08);
+        --text-main: #f5f5f7;
+        --text-secondary: #a1a1a6;
+        --shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        --shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Hero / Header Section */
+      header {
+        position: relative;
+        padding: 80px 0 40px;
+        text-align: center;
+        background: radial-gradient(circle at top, rgba(255, 107, 53, 0.15) 0%, transparent 60%);
+      }
+
+      .app-icon {
+        width: 90px;
+        height: 90px;
+        margin: 0 auto 24px;
+        background: linear-gradient(135deg, #1f1f24, #0f0f11);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), var(--shadow-inset);
+        border: 1px solid var(--card-border);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .app-icon::after {
+        content: "";
+        position: absolute;
+        width: 150%;
+        height: 150%;
+        background: radial-gradient(circle, rgba(255, 107, 53, 0.3) 0%, transparent 70%);
+        top: -20%;
+        left: -20%;
+      }
+
+      .app-icon svg {
+        width: 48px;
+        height: 48px;
+        z-index: 2;
+        filter: drop-shadow(0 2px 6px rgba(255, 107, 53, 0.5));
+      }
+
+      header h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        background: linear-gradient(to right, #ffffff, #e5e5e7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 8px;
+      }
+
+      header p.tagline {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        font-weight: 400;
+      }
+
+      /* Navigation */
+      nav {
+        background: rgba(15, 15, 17, 0.85);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--card-border);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        padding: 16px 0;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: 40px;
+      }
+
+      nav a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+      }
+
+      nav a:hover {
+        color: var(--primary);
+      }
+
+      /* Sections */
+      main {
+        padding: 40px 0 100px;
+      }
+
+      section {
+        padding: 40px 0;
+      }
+
+      section h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 36px;
+        border-left: 4px solid var(--primary);
+        padding-left: 16px;
+      }
+
+      /* FAQ List */
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .faq-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+      }
+
+      .faq-card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: var(--text-main);
+      }
+
+      .faq-card p, .faq-card li {
+        color: var(--text-secondary);
+        font-size: 0.98rem;
+        line-height: 1.6;
+      }
+
+      .faq-card ul {
+        margin: 14px 0 0 20px;
+      }
+
+      .faq-card li {
+        margin-bottom: 8px;
+      }
+
+      /* Contact Card */
+      .contact-card {
+        background: radial-gradient(circle at center, rgba(255, 107, 53, 0.05) 0%, transparent 100%), var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        box-shadow: var(--shadow);
+      }
+
+      .contact-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 16px;
+      }
+
+      .contact-card p {
+        color: var(--text-secondary);
+        margin-bottom: 24px;
+        font-size: 1.05rem;
+      }
+
+      .contact-email {
+        display: inline-block;
+        color: var(--primary);
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+        border-bottom: 2px dashed rgba(255, 107, 53, 0.4);
+        padding-bottom: 4px;
+      }
+
+      .contact-email:hover {
+        opacity: 0.8;
+      }
+
+      /* Footer */
+      footer {
+        background: #09090b;
+        border-top: 1px solid var(--card-border);
+        padding: 60px 0;
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+
+      footer a {
+        color: var(--text-main);
+        text-decoration: none;
+        margin: 0 15px;
+        transition: color 0.2s ease;
+      }
+
+      footer a:hover {
+        color: var(--primary);
+      }
+
+      .footer-links {
+        margin: 24px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="app-icon">
+          <!-- Orange Target Icon representing Goals -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" stroke="#ff6b35"></circle>
+            <circle cx="12" cy="12" r="6" stroke="#ff9f1c"></circle>
+            <circle cx="12" cy="12" r="2" fill="#ff6b35" stroke="#ff6b35"></circle>
+          </svg>
+        </div>
+        <h1>Goals Help Center</h1>
+        <p class="tagline">Answers, FAQs, and Contact Support</p>
+      </div>
+    </header>
+
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a href="About.html">About Goals</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#troubleshoot">Troubleshooting</a></li>
+          <li><a href="#contact">Contact Support</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <!-- FAQ Section -->
+      <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-card">
+            <h3>How do I restore my Premium subscription?</h3>
+            <p>If you reinstalled Goals App or upgraded devices, restoring your purchase is simple:</p>
+            <ul>
+              <li>Open Goals App on your iOS device.</li>
+              <li>Go to <strong>Settings</strong> (or tap on the Premium banner).</li>
+              <li>Tap on the <strong>"Restore Purchases"</strong> option.</li>
+              <li>Ensure you are logged into the device using the same Apple ID used to subscribe.</li>
+            </ul>
+          </div>
+
+          <div class="faq-card">
+            <h3>How do I link workout logs to Apple Health?</h3>
+            <p>Goals App syncs seamlessly with Apple Health so you don't lose exercise logs:</p>
+            <ul>
+              <li>When opening the app for the first time, request HealthKit permissions when prompted.</li>
+              <li>Alternatively, open iOS <strong>Settings</strong> app &gt; <strong>Health</strong> &gt; <strong>Data Access & Devices</strong> &gt; <strong>Goals</strong>.</li>
+              <li>Ensure permissions for Workouts, Steps, Active Calories, and Weight are turned ON.</li>
+              <li>Logged workouts will write automatically, and your dashboard steps/calorie burns will keep updated in real-time.</li>
+            </ul>
+          </div>
+
+          <div class="faq-card">
+            <h3>Can I duplicate existing workout logs to save time?</h3>
+            <p>Yes! Under the **Exercises** tab, you can create workout templates. To duplicate any template or copy it, tap and hold on the template row and select **Duplicate** to make a direct clone that you can customize. On the main details sheet of a logged workout, tap **Duplicate Workout** to copy the log forward.</p>
+          </div>
+
+          <div class="faq-card">
+            <h3>How does the Fasting Timer work?</h3>
+            <p>Choose an intermittent fasting protocol (like 16:8) and start the timer when you begin your fast. The companion app will keep tracking the remaining time, display metabolic progress, and log full completions directly into your health dashboard statistics once dismissed.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Troubleshooting -->
+      <section id="troubleshoot">
+        <h2>Troubleshooting Issues</h2>
+        <div class="faq-list">
+          <div class="faq-card">
+            <h3>App freezes, crashes, or fails to save logs</h3>
+            <p>If the database fails to write or the UI halts, please try the following steps:</p>
+            <ul>
+              <li>Force-quit Goals App and relaunch it.</li>
+              <li>Check if your device has enough free local storage.</li>
+              <li>Ensure you are running the latest app version by checking the App Store.</li>
+              <li>Restart your iOS device.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Support -->
+      <section id="contact">
+        <h2>Need More Help?</h2>
+        <div class="contact-card">
+          <h3>Contact Our Support Team</h3>
+          <p>For bug reports, billing issues, account questions, or feedback, email us. We generally reply within 1–2 business days.</p>
+          <a href="mailto:kelebronofficial@gmail.com" class="contact-email">kelebronofficial@gmail.com</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Goals. All Rights Reserved.</p>
+        <div class="footer-links">
+          <a href="https://octagonal-apogee-39a.notion.site/Privacy-Policy-2f95a820055180c4a7d7cffab1dd6f09?pvs=73" target="_blank">Privacy Policy</a>
+          <a href="https://octagonal-apogee-39a.notion.site/Terms-of-Use-1-2f95a820055180b49d44d83380e328b6" target="_blank">Terms of Use</a>
+          <a href="About.html">About Goals</a>
+        </div>
+        <p style="margin-top: 16px; font-size: 0.8rem; opacity: 0.6;">Designed for iOS and healthier living.</p>
+      </div>
+    </footer>
+  </body>
+</html>
