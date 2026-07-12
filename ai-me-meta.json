@@ -19,5 +19,6 @@
   "trialPillsSearchLimit": 15,
   "allowManualSearchOfFood": false,
   "showDistractingUserReq": true,
+  "showDistractingUserReqForWoman": false,
   "showDistractingUserReqForCalorie": false
 }
