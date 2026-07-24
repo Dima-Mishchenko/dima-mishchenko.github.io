@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Monk</title>
+    <style>
+        :root {
+            --bg-color: #F8F4EE;
+            --primary-color: #6B6555;
+            --accent-color: #8E8775;
+            --text-main: #2B2621;
+            --text-secondary: #5C544E;
+            --card-bg: #FAF7F2;
+            --border-color: #E6E0D5;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #F8F4EE;
+            font-weight: bold;
+            font-size: 22px;
+            box-shadow: 0 4px 10px rgba(107, 101, 85, 0.2);
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            text-align: center;
+        }
+
+        .last-updated {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        p, li {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background-color: #ECE6DC;
+            padding: 15px;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 12px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">M</div>
+            <div class="logo-text">MONK</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h1>Privacy Policy</h1>
+            <div class="last-updated">Last Updated: July 24, 2026</div>
+
+            <p>Welcome to Monk ("we," "our," or "us"). We are committed to protecting your privacy. This Privacy Policy explains how we handle your personal data when you use the Monk iOS application.</p>
+
+            <div class="highlight">
+                <strong>Our Philosophy on Privacy:</strong> Monk is designed so that your personal reflection data, block selections, and usage statistics never leave your device. We believe your path to intentionality and focus is personal and private.
+            </div>
+
+            <h2>1. Information We Collect</h2>
+            <p>Monk operates as a local-first application. We do not maintain user accounts on external servers, and we do not collect your personal details. The following points describe how data is stored:</p>
+            <ul>
+                <li><strong>Screen Time Data:</strong> Monk uses Apple's Screen Time API (FamilyControls) locally on your device to enforce shields. Your app activity selections, category limits, and blocking configurations are processed entirely by iOS and are never transmitted to us or any third party.</li>
+                <li><strong>Ritual & Intention Journals:</strong> Any text reflections, chosen focus states, or intentional check-ins you log during your unlocking rituals are saved directly in your device's local database (UserDefaults/CoreData) and are not uploaded to servers.</li>
+                <li><strong>Usage Analytics:</strong> We do not track individual behavior. We may receive anonymous aggregate performance logs provided directly by Apple App Store Connect diagnostics if you have opted into sharing crash reports with developers.</li>
+            </ul>
+
+            <h2>2. Third-Party Services</h2>
+            <p>Our app integrates with third-party tools to support essential local services:</p>
+            <ul>
+                <li><strong>Apple App Store & StoreKit:</strong> Transactions, subscriptions, and purchases are processed directly by Apple. Please refer to Apple's Privacy Policy regarding transactional security.</li>
+            </ul>
+
+            <h2>3. Data Security</h2>
+            <p>Since your information is stored locally on your device, the security of your data depends on your device's built-in security features (Passcode, Touch ID, Face ID, and secure iCloud backups).</p>
+
+            <h2>4. Contact Us</h2>
+            <p>If you have any questions or feedback regarding this Privacy Policy, please reach out to us at:</p>
+            <p>Email: <a href="mailto:dmitrymishchenko@icloud.com" style="color: var(--primary-color); text-decoration: none; font-weight: bold;">dmitrymishchenko@icloud.com</a></p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Monk. All rights reserved.
+    </footer>
+
+</body>
+</html>
