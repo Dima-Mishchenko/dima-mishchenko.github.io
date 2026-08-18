@@ -101,11 +101,35 @@
         color: var(--text-secondary);
       }
 
+      ul {
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      .highlight-box {
+        background-color: rgba(69, 109, 158, 0.06);
+        border-left: 4px solid var(--primary-color);
+        padding: 16px 20px;
+        border-radius: 4px 14px 14px 4px;
+        margin: 20px 0;
+      }
+
+      .highlight-box p {
+        margin: 0;
+        font-weight: 600;
+        color: var(--text-main);
+      }
+
       footer {
         text-align: center;
-        padding: 30px 0;
+        padding: 40px 0;
         font-size: 13px;
         color: var(--text-secondary);
+        border-top: 1px solid var(--border-color);
+        margin-top: 60px;
       }
 
       footer a {
@@ -130,46 +154,97 @@
 
     <div class="container">
       <div class="card">
-        <h1>Terms of Use (EULA)</h1>
-        <p class="last-updated">Last Updated: August 18, 2026</p>
+        <h1>Terms of Use</h1>
+        <div class="last-updated">Last Updated: August 18, 2026</div>
 
         <p>
-          Welcome to <strong>Zen Bear: Cozy Pomodoro Focus & App Blocker</strong>. By downloading or using the app, these terms will automatically apply to you. Please read them carefully before using the app.
+          Welcome to Zen Bear (the "App"), operated by Dmytro Mishchenko ("we", "us", "our"). By downloading, installing, or using this application, you agree to be bound by these Terms of Use ("Terms"). Please read them carefully. If you do not agree to these Terms, you may not use the App.
         </p>
 
-        <h2>1. Subscriptions & Billing</h2>
+        <h2>1. Acceptance of Terms & EULA</h2>
         <p>
-          Zen Bear offers weekly and yearly auto-renewable subscription plans for premium features including custom environments, premium cat companions, and deep focus analytics.
-        </p>
-        <ul>
-          <li><strong>Free Trial:</strong> Select plans include a 3-day free trial. If you do not cancel at least 24 hours before the trial ends, your Apple ID account will be charged for the subscription.</li>
-          <li><strong>Renewal & Cancellation:</strong> Subscriptions automatically renew unless auto-renew is turned off at least 24 hours prior to the end of the current billing period. You can manage or cancel your subscription anytime in your iOS App Store Account Settings.</li>
-        </ul>
-
-        <h2>2. Acceptable Use</h2>
-        <p>
-          Zen Bear is provided to assist users in building healthy focus habits and managing screen time distractions. You agree not to attempt to reverse engineer, decompile, or modify any portion of the application.
+          These Terms, together with Apple’s Standard Licensed Application End User License Agreement (EULA), govern your use of the App. To the extent there is any conflict between these Terms and Apple’s Standard EULA, Apple’s EULA shall prevail. You can access the standard EULA here:
+          <a
+            href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/"
+            target="_blank"
+            style="color: var(--primary-color); font-weight: 600"
+            >Apple Standard EULA</a
+          >.
         </p>
 
-        <h2>3. Disclaimer & Limitation of Liability</h2>
+        <h2>2. Description of Service</h2>
         <p>
-          Zen Bear is provided "as is" without warranties of any kind. We are not liable for any productivity loss, device incompatibility, or third-party service interruptions.
+          Zen Bear is a tool designed to encourage time management and study focus. It allows you to block certain applications on your iOS device using Apple’s native FamilyControls API. Access to locked applications is restored when focus sessions or breaks finish.
         </p>
 
-        <h2>4. Contact Information</h2>
+        <h2>3. Subscriptions and Purchases</h2>
         <p>
-          If you have questions regarding these Terms of Use, please reach out to us at:
-          <br />
-          <a href="mailto:kelebronofficial@gmail.com">kelebronofficial@gmail.com</a>
+          We offer premium features via auto-renewable subscriptions (Monthly and Yearly plans):
+        </p>
+        <div class="highlight-box">
+          <p>Auto-Renewal Terms (Apple App Store Requirement):</p>
+          <ul
+            style="
+              margin-top: 10px;
+              padding-left: 20px;
+              font-weight: normal;
+              color: var(--text-main);
+            "
+          >
+            <li>
+              Payment will be charged to your iTunes Account at confirmation of purchase.
+            </li>
+            <li>
+              Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current billing period.
+            </li>
+            <li>
+              Your account will be charged for renewal within 24 hours prior to the end of the current period, at the rate of the selected plan.
+            </li>
+            <li>
+              You can manage or cancel your subscription, including turning off auto-renewal, at any time by going to your Account Settings on the App Store after purchase.
+            </li>
+            <li>
+              Any unused portion of a free trial period, if offered, will be forfeited when you purchase a subscription.
+            </li>
+          </ul>
+        </div>
+
+        <h2>4. Usage Limitations & Disclaimer</h2>
+        <p>
+          While Zen Bear provides toolsets to shield yourself from social media distractions during study sessions, we make no guarantees that the shields will always remain 100% effective in all network, system, or OS environments. In no event shall we be liable for any productivity loss, failure to block, or bypass of the App Lock framework. You use the App at your own discretion and risk.
+        </p>
+
+        <h2>5. Intellectual Property</h2>
+        <p>
+          The App’s logo, design elements, animations, cozy environment backdrops, cat companion illustrations, and statistics layout engine are the exclusive property of Dmytro Mishchenko. You may not copy, reverse-engineer, or redistribute any assets or code from the App without prior written consent.
+        </p>
+
+        <h2>6. Termination</h2>
+        <p>
+          We reserve the right to suspend or terminate your access to premium features in the event of fraudulent purchases, chargeback abuse, or violations of these Terms.
+        </p>
+
+        <h2>7. Governing Law</h2>
+        <p>
+          These Terms shall be governed by and construed in accordance with the laws of Ukraine, without regard to its conflict of law provisions.
+        </p>
+
+        <h2>8. Contact Support</h2>
+        <p>
+          For billing queries, cancellations, or technical support, please contact us at:
+        </p>
+        <p style="font-weight: bold; color: var(--text-main); margin-bottom: 0">
+          Email: kelebronofficial@gmail.com
         </p>
       </div>
     </div>
 
     <footer>
-      <p>&copy; 2026 Zen Bear. All rights reserved.</p>
+      <p>&copy; 2026 Dmytro Mishchenko. All rights reserved.</p>
       <p>
-        <a href="./support.html">Support & FAQ</a> |
-        <a href="./privacy.html">Privacy Policy</a>
+        <a href="./privacy.html">Privacy Policy</a> |
+        <a href="./terms.html">Terms of Use</a> |
+        <a href="./support.html">Support</a>
       </p>
     </footer>
   </body>

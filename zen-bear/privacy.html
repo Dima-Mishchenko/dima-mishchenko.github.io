@@ -101,11 +101,35 @@
         color: var(--text-secondary);
       }
 
+      ul {
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      .highlight-box {
+        background-color: rgba(69, 109, 158, 0.06);
+        border-left: 4px solid var(--primary-color);
+        padding: 16px 20px;
+        border-radius: 4px 14px 14px 4px;
+        margin: 20px 0;
+      }
+
+      .highlight-box p {
+        margin: 0;
+        font-weight: 600;
+        color: var(--text-main);
+      }
+
       footer {
         text-align: center;
-        padding: 30px 0;
+        padding: 40px 0;
         font-size: 13px;
         color: var(--text-secondary);
+        border-top: 1px solid var(--border-color);
+        margin-top: 60px;
       }
 
       footer a {
@@ -131,45 +155,91 @@
     <div class="container">
       <div class="card">
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: August 18, 2026</p>
+        <div class="last-updated">Last Updated: August 18, 2026</div>
 
         <p>
-          At <strong>Zen Bear</strong>, accessible from our mobile application, your privacy is our top priority. This Privacy Policy document outlines the types of information that are collected and recorded by Zen Bear and how we use it.
+          At <strong>Zen Bear</strong>, operated by Dmytro Mishchenko ("we", "us", "our"), we are committed to protecting your privacy. This Privacy Policy document explains how we collect, use, disclose, and safeguard your information when you use our mobile application (the "App"). By using Zen Bear, you agree to the terms described in this policy.
         </p>
 
-        <h2>1. Information We Collect</h2>
+        <div class="highlight-box">
+          <p>
+            Crucial Privacy Standard: All app selection tokens, focus timer schedules, and distraction shielding rules are processed entirely locally on your device via Apple's native FamilyControls and ManagedSettings frameworks. We do not have access to, collect, store, or transmit this data to any external server.
+          </p>
+        </div>
+
+        <h2>1. Information Collection</h2>
         <p>
-          <strong>Zen Bear is designed with privacy in mind.</strong> We do not track, collect, or store any personal data or app usage details on remote servers.
+          We believe in absolute data minimization. Below is the breakdown of the limited information used by the App:
         </p>
         <ul>
-          <li><strong>Screen Time & App Activity:</strong> All app selection and shielding parameters requested via Apple's Screen Time framework (FamilyControls) remain strictly on your iOS device. Zen Bear does not have access to your personal app usage logs, web browsing history, or message content.</li>
-          <li><strong>Focus Statistics & Preferences:</strong> Your study session durations, completed breaks, selected environments, and cat companion preferences are stored locally on your device via <code>UserDefaults</code>.</li>
+          <li>
+            <strong>Local Personalization Data:</strong> Your focus preset preferences, completed study sessions, focus streaks, custom timer intervals, selected ambient environments, and cat companion choices are stored strictly in your device's local storage (<code>UserDefaults</code>).
+          </li>
+          <li>
+            <strong>Screen Time & Managed Settings:</strong> The App utilizes Apple's FamilyControls, ManagedSettings, and DeviceActivity frameworks to enable application shielding during focus sessions. Your selected applications (application tokens) are strictly stored and processed on-device by Apple's secure sandboxed frameworks. We never transmit or log this data.
+          </li>
+          <li>
+            <strong>Purchase and Billing Data:</strong> All payments and subscriptions are processed directly through Apple's StoreKit framework. We do not collect or store your billing credentials, credit card details, or payment transactions.
+          </li>
         </ul>
 
-        <h2>2. Use of Apple Screen Time API</h2>
+        <h2>2. Information Usage</h2>
         <p>
-          Zen Bear utilizes Apple's official Screen Time API solely to restrict access to selected apps during active focus sessions. We never sell, transmit, or monetize your activity choices.
+          We use the local personalization details solely to customize your experience within the App, including:
+        </p>
+        <ul>
+          <li>
+            Tracking your daily focus minutes, Pomodoro session streaks, and 7-day study history locally on your device.
+          </li>
+          <li>
+            Enabling App Lock shields automatically when focus timers are active offline on your phone.
+          </li>
+        </ul>
+
+        <h2>3. Third-Party Services & SDKs</h2>
+        <p>
+          We do not use any external advertising networks, trackers, or user profiling SDKs. We do not share, sell, or rent any personal information to third parties.
         </p>
 
-        <h2>3. In-App Purchases & Subscriptions</h2>
+        <h2>4. Data Retention and Deletion</h2>
         <p>
-          All financial transactions and subscription management are handled securely by Apple via StoreKit. Zen Bear does not collect or store your credit card or billing details.
+          Because all of your personal configuration and progress data is stored locally on your device:
+        </p>
+        <ul>
+          <li>
+            Deleting the App from your device will immediately and permanently erase all locally stored data, including your focus statistics, streaks, and local settings.
+          </li>
+          <li>
+            You can reset your statistics or change your settings at any time in the Settings menu within the App.
+          </li>
+        </ul>
+
+        <h2>5. Children's Privacy</h2>
+        <p>
+          Zen Bear is designed for users of all ages looking to improve their time management and study focus. We do not knowingly collect, request, or transmit personal data from children under the age of 13.
         </p>
 
-        <h2>4. Contact Us</h2>
+        <h2>6. Changes to This Privacy Policy</h2>
         <p>
-          If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at:
-          <br />
-          <a href="mailto:kelebronofficial@gmail.com">kelebronofficial@gmail.com</a>
+          We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top.
+        </p>
+
+        <h2>7. Contact Us</h2>
+        <p>
+          If you have any questions, suggestions, or concerns regarding your privacy while using Zen Bear, please feel free to reach out to us at:
+        </p>
+        <p style="font-weight: bold; color: var(--text-main); margin-bottom: 0">
+          Email: kelebronofficial@gmail.com
         </p>
       </div>
     </div>
 
     <footer>
-      <p>&copy; 2026 Zen Bear. All rights reserved.</p>
+      <p>&copy; 2026 Dmytro Mishchenko. All rights reserved.</p>
       <p>
-        <a href="./support.html">Support & FAQ</a> |
-        <a href="./terms.html">Terms of Use</a>
+        <a href="./privacy.html">Privacy Policy</a> |
+        <a href="./terms.html">Terms of Use</a> |
+        <a href="./support.html">Support</a>
       </p>
     </footer>
   </body>
