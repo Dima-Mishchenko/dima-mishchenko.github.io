@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support & FAQ - Zen Bear: Cozy Pomodoro & App Blocker</title>
+    <style>
+      :root {
+        --bg-color: #f7f4ec;
+        --primary-color: #456d9e;
+        --accent-color: #5b84b8;
+        --text-main: #382a1e;
+        --text-secondary: #78685a;
+        --card-bg: #ffffff;
+        --border-color: #e6dfd3;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: var(--card-bg);
+        border-bottom: 1px solid var(--border-color);
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        text-decoration: none;
+        color: var(--text-main);
+      }
+
+      .logo-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: 0 4px 12px rgba(69, 109, 158, 0.25);
+      }
+
+      .logo-text {
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: 0 4px 20px rgba(56, 42, 30, 0.04);
+      }
+
+      h1 {
+        font-size: 30px;
+        font-weight: 800;
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: var(--text-main);
+        text-align: center;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        color: var(--text-secondary);
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        font-size: 20px;
+        font-weight: 700;
+        margin-top: 32px;
+        margin-bottom: 16px;
+        border-bottom: 2px solid var(--bg-color);
+        padding-bottom: 8px;
+        color: var(--primary-color);
+      }
+
+      h3 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 20px;
+        margin-bottom: 8px;
+        color: var(--text-main);
+      }
+
+      p,
+      li {
+        font-size: 15px;
+        color: var(--text-secondary);
+      }
+
+      .contact-box {
+        background-color: rgba(69, 109, 158, 0.06);
+        border: 1px dashed var(--primary-color);
+        padding: 28px;
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      .contact-btn {
+        display: inline-block;
+        background: linear-gradient(
+          135deg,
+          var(--accent-color),
+          var(--primary-color)
+        );
+        color: white;
+        padding: 12px 28px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 15px;
+        margin-top: 15px;
+        box-shadow: 0 4px 12px rgba(69, 109, 158, 0.25);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .contact-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(69, 109, 158, 0.35);
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px 0;
+        font-size: 13px;
+        color: var(--text-secondary);
+      }
+
+      footer a {
+        color: var(--primary-color);
+        text-decoration: none;
+        margin: 0 10px;
+        font-weight: 600;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="./support.html" class="logo-container">
+        <img src="./appicon.png" alt="Zen Bear Logo" class="logo-icon" />
+        <span class="logo-text">Zen Bear</span>
+      </a>
+    </header>
+
+    <div class="container">
+      <div class="card">
+        <h1>Support & Frequently Asked Questions</h1>
+        <p class="subtitle">
+          Everything you need to know about Zen Bear: Cozy Pomodoro Focus & App Blocker.
+        </p>
+
+        <h2>1. Screen Time & App Shielding</h2>
+        <h3>How does distraction app blocking work?</h3>
+        <p>
+          Zen Bear uses Apple's official Screen Time API (FamilyControls & ManagedSettings). When a focus session begins, your selected distracting apps (e.g. social media, games) are automatically shielded to protect your deep focus.
+        </p>
+
+        <h3>Why aren't my chosen apps being shielded?</h3>
+        <p>
+          Please ensure Screen Time permissions are granted to Zen Bear. Go to iOS Settings &gt; Screen Time &gt; Zen Bear and make sure access is turned ON. Also verify that you have chosen specific app categories or apps under "Manage Apps" in the Zen Settings menu.
+        </p>
+
+        <h2>2. Subscription & Premium</h2>
+        <h3>How does the 3-day Free Trial work?</h3>
+        <p>
+          New users can try Zen Bear Premium free for 3 days. You will not be charged if you cancel in your Apple ID Subscription Settings at least 24 hours before the trial ends.
+        </p>
+
+        <h3>How do I restore my existing purchase?</h3>
+        <p>
+          Open Zen Settings inside the app, tap on "Zen Bear Premium", and select "Restore Purchases" at the bottom of the paywall. Your Apple ID subscription will automatically reactivate.
+        </p>
+
+        <h2>3. Customizations & Environments</h2>
+        <h3>How do I switch cozy environments or cat companions?</h3>
+        <p>
+          Tap the settings icon on the top right of the main study screen. Under **ENVIRONMENT**, choose between Day, Night, Rain, or Snow. Under **COMPANION**, toggle between Cozy Cat and Black Cat.
+        </p>
+
+        <div class="contact-box">
+          <h3>Need further assistance?</h3>
+          <p>We're here to help you maintain a peaceful study environment.</p>
+          <a href="mailto:kelebronofficial@gmail.com?subject=Zen%20Bear%20Support" class="contact-btn">Contact Support Team</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 Zen Bear. All rights reserved.</p>
+      <p>
+        <a href="./privacy.html">Privacy Policy</a> |
+        <a href="./terms.html">Terms of Use</a>
+      </p>
+    </footer>
+  </body>
+</html>
