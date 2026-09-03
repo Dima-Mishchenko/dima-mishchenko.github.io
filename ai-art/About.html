@@ -5,159 +5,672 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="AI Art: Aesthetic Photos – The ultimate AI photo editor with vintage filters, face swaps, and high-res avatars. Try Premium FREE for 7 days."
+      content="Photo X: AI Photo Editor & Generator – Professional LinkedIn headshots, fashion editorials, analog revival, hair makeovers, dating glow-up, and fine art portraits."
     />
-    <title>AI Art: Aesthetic Photos</title>
+    <title>Photo X: AI Photo Editor & Art Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      h1 {
-        display: none;
+      :root {
+        --primary: #8b5cf6;
+        --primary-glow: rgba(139, 92, 246, 0.4);
+        --accent: #ec4899;
+        --accent-glow: rgba(236, 72, 153, 0.3);
+        --bg-dark: #090a10;
+        --bg-card: rgba(23, 25, 38, 0.7);
+        --bg-card-hover: rgba(32, 35, 54, 0.85);
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+        --border-glass: rgba(255, 255, 255, 0.08);
+        --border-glass-bright: rgba(255, 255, 255, 0.16);
       }
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Oxygen, sans-serif;
+
+      * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        background: #fefefe;
-        color: #111;
+      }
+
+      body {
+        font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: var(--bg-dark);
+        color: var(--text-main);
         line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
       }
+
+      /* Ambient Background Glows */
+      .bg-glow-1 {
+        position: fixed;
+        top: -150px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 800px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(236, 72, 153, 0.12) 50%, transparent 70%);
+        filter: blur(80px);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .bg-glow-2 {
+        position: fixed;
+        bottom: 10%;
+        right: -100px;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+        filter: blur(90px);
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Header & Hero */
       header {
-        background: #111;
-        color: #fff;
-        padding: 2rem 1rem;
+        padding: 4.5rem 1.5rem 3.5rem;
         text-align: center;
+        position: relative;
       }
-      main {
-        max-width: 800px;
-        margin: 2rem auto;
+
+      .app-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-glass);
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #e2e8f0;
+        margin-bottom: 1.75rem;
+        backdrop-filter: blur(10px);
+      }
+
+      .app-icon {
+        width: 108px;
+        height: 108px;
+        border-radius: 26px;
+        box-shadow: 0 12px 35px var(--primary-glow);
+        margin: 0 auto 1.5rem;
+        display: block;
+        border: 2px solid rgba(255, 255, 255, 0.15);
+        transition: transform 0.3s ease;
+      }
+
+      .app-icon:hover {
+        transform: scale(1.05) rotate(2deg);
+      }
+
+      h1.hero-title {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(2.2rem, 5vw, 3.4rem);
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.15;
+        margin-bottom: 1.25rem;
+        background: linear-gradient(135deg, #ffffff 30%, #c084fc 70%, #f472b6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      p.hero-subtitle {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        max-width: 650px;
+        margin: 0 auto 2.25rem;
+        color: var(--text-muted);
+        font-weight: 400;
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(135deg, #8b5cf6, #ec4899);
+        color: #fff;
+        padding: 0.9rem 2rem;
+        border-radius: 14px;
+        font-weight: 600;
+        font-size: 1.05rem;
+        text-decoration: none;
+        box-shadow: 0 8px 24px var(--primary-glow);
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(236, 72, 153, 0.5);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.06);
+        color: #e2e8f0;
+        padding: 0.9rem 1.6rem;
+        border-radius: 14px;
+        font-weight: 600;
+        font-size: 1.05rem;
+        text-decoration: none;
+        border: 1px solid var(--border-glass-bright);
+        transition: all 0.2s ease;
+        backdrop-filter: blur(12px);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+      }
+
+      /* Showcase Grid */
+      .section-header {
+        text-align: center;
+        margin: 4rem 0 2rem;
+      }
+
+      .section-header h2 {
+        font-family: "Space Grotesk", sans-serif;
+        font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+        letter-spacing: -0.02em;
+        margin-bottom: 0.5rem;
+      }
+
+      .section-header p {
+        color: var(--text-muted);
+        font-size: 1rem;
+        max-width: 540px;
+        margin: 0 auto;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.25rem;
+        margin-top: 1.5rem;
+      }
+
+      .gallery-card {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        background: var(--bg-card);
+        border: 1px solid var(--border-glass);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        aspect-ratio: 4 / 5;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .gallery-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(139, 92, 246, 0.5);
+      }
+
+      .gallery-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .gallery-card:hover img {
+        transform: scale(1.04);
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem 1.25rem 1rem;
+        background: linear-gradient(to top, rgba(9, 10, 16, 0.95) 10%, rgba(9, 10, 16, 0.5) 70%, transparent);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .gallery-overlay span.tag {
+        align-self: flex-start;
+        background: rgba(139, 92, 246, 0.35);
+        border: 1px solid rgba(139, 92, 246, 0.5);
+        color: #e9d5ff;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 3px 8px;
+        border-radius: 6px;
+        margin-bottom: 0.35rem;
+      }
+
+      .gallery-overlay h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      /* Features Grid */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.25rem;
+        margin: 2.5rem 0;
+      }
+
+      .feature-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-glass);
+        border-radius: 20px;
+        padding: 2rem;
+        backdrop-filter: blur(14px);
+        transition: all 0.25s ease;
+      }
+
+      .feature-card:hover {
+        background: var(--bg-card-hover);
+        border-color: var(--border-glass-bright);
+        transform: translateY(-4px);
+      }
+
+      .feature-icon-wrapper {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2));
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .feature-card h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .feature-card p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      /* Pricing / Premium Card */
+      .premium-box {
+        position: relative;
+        background: linear-gradient(145deg, rgba(23, 25, 38, 0.9), rgba(16, 17, 28, 0.95));
+        border: 1px solid rgba(139, 92, 246, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        border-radius: 24px;
+        padding: 3rem 2rem;
+        margin: 3.5rem auto;
+        max-width: 680px;
+        text-align: center;
+        backdrop-filter: blur(16px);
+      }
+
+      .premium-tag {
+        display: inline-block;
+        background: linear-gradient(90deg, #8b5cf6, #ec4899);
+        color: white;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding: 5px 14px;
+        border-radius: 9999px;
+        margin-bottom: 1.25rem;
+      }
+
+      .premium-list {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 0.85rem;
+        text-align: left;
+        margin: 2rem 0;
         padding: 0 1rem;
       }
-      h1,
-      h2 {
-        color: white;
+
+      .premium-list li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #e2e8f0;
+        font-size: 0.95rem;
       }
-      ul {
-        padding-left: 1.2em;
+
+      .premium-list li svg {
+        flex-shrink: 0;
+        color: #10b981;
       }
-      a {
-        color: #007aff;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      .feature {
-        margin-bottom: 2rem;
-      }
-      footer {
-        background: #f2f2f2;
-        padding: 2rem 1rem;
-        text-align: center;
+
+      .price-note {
+        color: var(--text-muted);
         font-size: 0.9rem;
-        color: #666;
+        margin-top: 1rem;
+      }
+
+      /* Support & Links Section */
+      .links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.25rem;
+        margin: 2rem 0 4rem;
+      }
+
+      .link-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-glass);
+        border-radius: 16px;
+        padding: 1.5rem;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: all 0.2s ease;
+      }
+
+      .link-card:hover {
+        background: var(--bg-card-hover);
+        border-color: rgba(139, 92, 246, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .link-card h4 {
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin-bottom: 0.35rem;
+        color: #f1f5f9;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .link-card p {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+      }
+
+      /* Footer */
+      footer {
+        border-top: 1px solid var(--border-glass);
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+        color: #64748b;
+        font-size: 0.85rem;
+      }
+
+      footer a {
+        color: var(--text-muted);
+        text-decoration: none;
+        margin: 0 0.5rem;
+      }
+
+      footer a:hover {
+        color: #e2e8f0;
+      }
+
+      @media (max-width: 640px) {
+        header {
+          padding: 3rem 1rem 2rem;
+        }
+        .premium-box {
+          padding: 2rem 1.25rem;
+        }
+        .premium-list {
+          padding: 0;
+        }
       }
     </style>
   </head>
   <body>
-    <header>
-      <h2 style="font-size: 2em">🎨 AI Art: Aesthetic Photos</h2>
-      <p>
-        The ultimate AI-powered photo editor for vintage filters, futuristic
-        avatars, and artistic face swaps.
-      </p>
-    </header>
+    <div class="bg-glow-1"></div>
+    <div class="bg-glow-2"></div>
 
-    <main>
-      <section class="feature">
-        <h2>🚀 Why Creators Love It</h2>
-        <ul>
+    <div class="container">
+      <header>
+        <div class="app-badge">✨ Next-Gen AI Photo Studio</div>
+        <img
+          src="assets/app-icon.png"
+          alt="Photo X App Icon"
+          class="app-icon"
+        />
+        <h1 class="hero-title">Photo X: AI Photo Editor</h1>
+        <p class="hero-subtitle">
+          Create executive LinkedIn headshots, high-fashion editorials, analog 35mm film revival, new hair makeovers, and fine art masterpieces with precision AI.
+        </p>
+        <div class="hero-actions">
+          <a href="https://apps.apple.com/app/id6752693666" class="btn-primary">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.61-.75 1.04-1.8 0.92-2.87-0.91.04-2.02.61-2.67 1.36-.58.66-1.09 1.74-.96 2.78 1.02.08 2.08-.52 2.71-1.27z"/>
+            </svg>
+            Download on App Store
+          </a>
+          <a href="#showcase" class="btn-secondary">Explore Styles ↓</a>
+        </div>
+      </header>
+
+      <section id="showcase">
+        <div class="section-header">
+          <h2>Transformations with Photo X</h2>
+          <p>Explore studio-grade transformations across professional headshots, analog film, editorial fashion, and fine art.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-card">
+            <img src="assets/headshots.jpg" alt="Executive Headshots Style" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="tag">Studio Profile</span>
+              <h3>Executive Headshots</h3>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/analog.jpg" alt="Analog Revival Kodak Portra Style" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="tag">Vintage Film</span>
+              <h3>Analog Revival</h3>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/fashion.jpg" alt="Fashion Editorial Dark Academia Style" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="tag">High Fashion</span>
+              <h3>Fashion Editorial</h3>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/hair.jpg" alt="Hair Makeover Cherry Cola Red Style" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="tag">Color & Style</span>
+              <h3>Hair Makeover</h3>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/ethereal.jpg" alt="Ethereal Dreamcore Style" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="tag">Dreamcore</span>
+              <h3>Ethereal Aesthetic</h3>
+            </div>
+          </div>
+          <div class="gallery-card">
+            <img src="assets/fine-art.jpg" alt="Cyber Ukiyo-e Fine Art Style" loading="lazy" />
+            <div class="gallery-overlay">
+              <span class="tag">Master Series</span>
+              <h3>Fine Art Portraits</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features">
+        <div class="section-header">
+          <h2>Why Creators Choose Photo X</h2>
+          <p>Cutting-edge generative models designed for true photographic realism and studio styling.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">👔</div>
+            <h3>Professional Headshots</h3>
+            <p>Generate clean, sharp LinkedIn and resume portraits with studio lighting, suits, and modern office backgrounds.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🎞️</div>
+            <h3>Analog Film Revival</h3>
+            <p>Authentic 35mm film grain, Kodak Portra golden hour tones, indie flash, and 2000s CCD digicam textures.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">✨</div>
+            <h3>Dating & Glow-Up</h3>
+            <p>Glass-skin retouching, sunset rooftop ambience, and natural candid portraits that look effortless.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">💇‍♀️</div>
+            <h3>Hair & Salon Makeover</h3>
+            <p>Try butter blonde, cherry cola espresso, cowboy copper, platinum ice, and chic curtain bangs in seconds.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🎨</div>
+            <h3>Fine Art & Editorial</h3>
+            <p>Turn portraits into Renaissance chiaroscuro, cyber ukiyo-e, or high-fashion dark academia editorials.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">📸</div>
+            <h3>Clean & Minimal Aesthetics</h3>
+            <p>Fresh morning linen sunlight, matcha loft routines, and clean minimalist streetwear aesthetics.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="premium-box">
+        <span class="premium-tag">PRO EXPERIENCE</span>
+        <h2 style="font-family: 'Space Grotesk', sans-serif; font-size: 2rem; margin-bottom: 0.5rem;">
+          Unlock Photo X Pro
+        </h2>
+        <p style="color: var(--text-muted); font-size: 1rem;">
+          Experience full creative freedom with the Photo X Pro subscription.
+        </p>
+
+        <ul class="premium-list">
           <li>
-            <strong>AI Image-to-Image Generation:</strong> Turn selfies or
-            sketches into expressive artwork in seconds.
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            Unlimited AI photo generations
           </li>
           <li>
-            <strong>Retro & Vintage Filters:</strong> 90s VHS, film grain, disco
-            glow — relive every era.
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            Ultra HD resolution downloads
           </li>
           <li>
-            <strong>AI Face Swaps & Avatars:</strong> Create surreal or
-            hyper-realistic versions of yourself.
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            Unlock all editorial & master styles
           </li>
           <li>
-            <strong>Time Travel Selfies:</strong> See yourself older, younger,
-            or in a different timeline.
-          </li>
-          <li>
-            <strong>Real-Time Aesthetic Camera:</strong> Capture stories and
-            moods with instant visual styles.
-          </li>
-          <li>
-            <strong>Built-in Gallery:</strong> Easily browse and manage your
-            AI-generated images.
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414 0z" clip-rule="evenodd"/>
+            </svg>
+            Priority GPU rendering speed
           </li>
         </ul>
-      </section>
 
-      <section class="feature">
-        <h2>💎 Go Premium – Try 1 Week FREE</h2>
-        <p>Unlock the full creative experience with AI Art Premium:</p>
-        <ul>
-          <li>✅ Unlimited AI generations</li>
-          <li>✅ High-resolution exports</li>
-          <li>✅ Exclusive filters and avatar styles</li>
-          <li>✅ Priority access to new features</li>
-        </ul>
-        <p>
-          <strong>Try FREE for 3 days</strong>, then only $5.99/week or
-          $39.99/year. Cancel anytime in iOS settings.
+        <a href="https://apps.apple.com/app/id6752693666" class="btn-primary" style="width: 100%; max-width: 320px; justify-content: center; margin: 0 auto;">
+          Try Premium Free for 3 Days
+        </a>
+        <p class="price-note">
+          After trial, only $5.99/week or $39.99/year. Cancel anytime in Apple ID Subscriptions.
         </p>
       </section>
 
-      <section class="feature">
-        <h2>📱 Download & Start Creating</h2>
-        <p>
-          Available exclusively on the App Store. Join thousands of creators
-          transforming their photos with smart AI tools.
-        </p>
-        <p><a href="#">Download on the App Store →</a></p>
-      </section>
+      <div class="links-grid">
+        <a
+          href="https://octagonal-apogee-39a.notion.site/Support-Page-2445a820055180f7b887d36f1f7af0e0?pvs=73"
+          class="link-card"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div>
+            <h4>
+              Support & Help
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17l9.2-9.2M17 17V7H7"/>
+              </svg>
+            </h4>
+            <p>Find answers to common questions or reach out to our team.</p>
+          </div>
+        </a>
 
-      <section class="feature">
-        <h2>🛠 Need Help?</h2>
-        <p>
-          <a
-            href="https://octagonal-apogee-39a.notion.site/Support-Page-2445a820055180f7b887d36f1f7af0e0?pvs=73"
-            >Visit the Support Page</a
-          >
-        </p>
-        <p>
-          <a href="mailto:evermakers.ai@gmail.com?subject=AI%20Art%20Support"
-            >evermakers.ai@gmail.com</a
-          >
-        </p>
-      </section>
-
-      <section class="feature">
-        <h2>🔒 Legal</h2>
-        <ul>
-          <li>
-            <a
-              href="https://octagonal-apogee-39a.notion.site/Privacy-Policy-2445a820055180aab3dfd51fb734bf67?pvs=73"
-              >Privacy Policy</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://octagonal-apogee-39a.notion.site/Terms-of-Use-2445a820055180c08927fc2b62832c47?pvs=73"
-              >Terms of Use</a
-            >
-          </li>
-        </ul>
-      </section>
-    </main>
+        <a
+          href="mailto:evermakers.ai@gmail.com?subject=Photo%20X%20Support"
+          class="link-card"
+        >
+          <div>
+            <h4>
+              Email Us
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </h4>
+            <p>evermakers.ai@gmail.com</p>
+          </div>
+        </a>
+      </div>
+    </div>
 
     <footer>
-      <p>© 2025 AI Art: Aesthetic Photos — Built with ❤️ for creators</p>
+      <div class="container">
+        <p>© 2025 Photo X. All rights reserved.</p>
+        <div style="margin-top: 0.5rem;">
+          <a
+            href="https://octagonal-apogee-39a.notion.site/Privacy-Policy-2445a820055180aab3dfd51fb734bf67?pvs=73"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Privacy Policy</a
+          >
+          <span>•</span>
+          <a
+            href="https://octagonal-apogee-39a.notion.site/Terms-of-Use-2445a820055180c08927fc2b62832c47?pvs=73"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Terms of Use</a
+          >
+        </div>
+      </div>
     </footer>
   </body>
 </html>

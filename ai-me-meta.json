@@ -20,5 +20,6 @@
   "allowManualSearchOfFood": false,
   "showDistractingUserReq": false,
   "showDistractingUserReqForWoman": true,
-  "showDistractingUserReqForCalorie": false
+  "showDistractingUserReqForCalorie": false,
+  "prayerOnboardingAllowSkipImmediate": true
 }
