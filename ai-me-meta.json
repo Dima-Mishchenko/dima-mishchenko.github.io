@@ -1,10 +1,8 @@
 {
   "urls": [
     "https://photo-app-us-875898588568.us-central1.run.app",
-    "https://photo-app-us-425940145056.us-central1.run.app",
-    "https://photo-app-us-17265922219.us-central1.run.app",
-    "https://photo-app-us-644476107788.us-central1.run.app",
-    "https://photo-app-us-545480301228.us-central1.run.app"
+    "https://photo-app-us-875898588568.us-central1.run.app",
+    "https://photo-app-us-17265922219.us-central1.run.app"
   ],
   "weeklyVideoLimit": 10,
   "triaVideolLimit": 0,
@@ -19,8 +17,8 @@
   "trialPillsCountLimit": 5,
   "trialPillsSearchLimit": 15,
   "allowManualSearchOfFood": false,
-  "showDistractingUserReq": false,
+  "showDistractingUserReq": true,
   "showDistractingUserReqForWoman": true,
   "showDistractingUserReqForCalorie": false,
-  "prayerOnboardingAllowSkipImmediate": true
+  "prayerOnboardingAllowSkipImmediate": false
 }
