@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Use - Iris AI: Eye Color Identifier</title>
+    <meta
+      name="description"
+      content="Terms of Use and End User License Agreement for Iris AI: Eye Color Identifier & Analyzer."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-color: #06070d;
+        --card-bg: rgba(13, 17, 30, 0.65);
+        --card-border: rgba(255, 255, 255, 0.08);
+        --text-primary: #f3f4f6;
+        --text-secondary: #9ca3af;
+        --text-muted: #6b7280;
+        --accent-cyan: #00f2fe;
+        --accent-blue: #3b82f6;
+        --accent-emerald: #10b981;
+        --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background-color: var(--bg-color);
+        color: var(--text-primary);
+        line-height: 1.7;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      .bg-glow-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.15;
+        z-index: 1;
+        pointer-events: none;
+      }
+      .orb-1 {
+        top: 0%;
+        right: -10%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, var(--accent-cyan), var(--accent-blue));
+      }
+      .orb-2 {
+        top: 40%;
+        left: -15%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, #8b5cf6, var(--accent-blue));
+      }
+
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 50px 24px 100px 24px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .logo-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--text-primary);
+        margin-bottom: 24px;
+      }
+
+      .logo-text {
+        font-family: var(--font-display);
+        font-size: 1.8rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #ffffff 40%, var(--accent-cyan));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      h1 {
+        font-family: var(--font-display);
+        font-size: 2.8rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin-bottom: 12px;
+      }
+
+      .effective-date {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+      }
+
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--card-border);
+        border-radius: 20px;
+        padding: 36px;
+        margin-bottom: 30px;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+
+      h2 {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-top: 28px;
+        margin-bottom: 14px;
+        color: #ffffff;
+        border-left: 4px solid var(--accent-cyan);
+        padding-left: 14px;
+      }
+
+      h2:first-of-type {
+        margin-top: 0;
+      }
+
+      p {
+        color: var(--text-secondary);
+        margin-bottom: 16px;
+        font-size: 1.02rem;
+      }
+
+      ul {
+        list-style-position: inside;
+        color: var(--text-secondary);
+        margin-bottom: 16px;
+        padding-left: 8px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      strong {
+        color: var(--text-primary);
+      }
+
+      .alert-box {
+        background: rgba(245, 158, 11, 0.08);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        border-radius: 12px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .alert-box p {
+        color: #fcd34d;
+        margin-bottom: 0;
+      }
+
+      a {
+        color: var(--accent-cyan);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 50px;
+        padding-top: 25px;
+        border-top: 1px solid var(--card-border);
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-glow-orb orb-1"></div>
+    <div class="bg-glow-orb orb-2"></div>
+
+    <div class="content-wrapper">
+      <header>
+        <a href="About.html" class="logo-link">
+          <span style="font-size: 32px">👁️</span>
+          <span class="logo-text">Iris AI</span>
+        </a>
+        <h1>Terms of Use</h1>
+        <p class="effective-date">Last updated: October 2, 2026</p>
+      </header>
+
+      <div class="card">
+        <p>
+          Welcome to <strong>Iris AI: Eye Color Identifier & Analyzer</strong> (“Iris AI”, “the App”),
+          developed by Dmitry Mishchenko (“we”, “us”, “our”). By installing, accessing, or using Iris AI,
+          you agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use the application.
+        </p>
+
+        <div class="alert-box">
+          <p>
+            <strong>Important Medical Disclaimer:</strong> Iris AI is designed solely for entertainment, educational,
+            and personal informational purposes. Iris AI is <strong>not a medical device</strong> and does not provide
+            medical diagnosis, treatment, or clinical ophthalmology advice. Always consult a qualified healthcare provider
+            or ophthalmologist with any health concerns.
+          </p>
+        </div>
+
+        <h2>1. License and Permitted Use</h2>
+        <p>
+          We grant you a personal, non-exclusive, non-transferable, revocable license to use Iris AI for personal,
+          non-commercial purposes in accordance with these Terms and applicable store rules (Google Play Terms of Service
+          and Apple Media Services Terms and Conditions).
+        </p>
+
+        <h2>2. Subscriptions and In-App Purchases</h2>
+        <p>
+          Iris AI offers optional premium features through in-app purchases and auto-renewing subscriptions:
+        </p>
+        <ul>
+          <li>
+            <strong>Payment & Billing:</strong> Payments are processed securely by <strong>Google Play</strong>
+            (for Android devices) or the <strong>Apple App Store</strong> (for iOS devices). Payment will be charged
+            to your Google Play Account or Apple ID at confirmation of purchase.
+          </li>
+          <li>
+            <strong>Auto-Renewal:</strong> Subscriptions automatically renew unless auto-renew is cancelled at least
+            24 hours before the end of the current billing cycle. Your account will be charged for renewal within 24 hours
+            prior to the end of the current period at the then-current subscription price.
+          </li>
+          <li>
+            <strong>Free Trials:</strong> If a free trial is offered, any unused portion of the trial period will be
+            forfeited when a subscription is purchased. At the conclusion of the free trial period, the subscription will
+            automatically transition into a paid weekly subscription unless cancelled prior to the expiration of the trial.
+          </li>
+          <li>
+            <strong>Managing & Cancelling Subscriptions:</strong> You can manage or cancel your subscriptions at any time:
+            <ul style="margin-top: 8px;">
+              <li><strong>Android:</strong> Open the Google Play Store App &gt; Profile icon &gt; Payments &amp; subscriptions &gt; Subscriptions.</li>
+              <li><strong>iOS:</strong> Open the Settings App &gt; Apple ID &gt; Subscriptions.</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Refunds:</strong> Refund requests are governed by the respective store's refund policy:
+            <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener">Google Play Refund Policy</a> or
+            <a href="https://support.apple.com/HT204084" target="_blank" rel="noopener">Apple Support</a>.
+          </li>
+        </ul>
+
+        <h2>3. User Responsibilities & Content</h2>
+        <p>
+          When using Iris AI, you agree not to:
+        </p>
+        <ul>
+          <li>Submit images that violate intellectual property, privacy, or publicity rights of any third party.</li>
+          <li>Attempt to reverse-engineer, decompile, or extract the source code or proprietary AI models of the application.</li>
+          <li>Use the app to harass, impersonate, or conduct unauthorized surveillance on any person.</li>
+          <li>Interfere with or disrupt the backend infrastructure or networks supporting the application.</li>
+        </ul>
+
+        <h2>4. Disclaimer of Warranties</h2>
+        <p>
+          Iris AI and all AI-generated analyses (color categorization, pattern identification, personality traits, and ancestry insights)
+          are provided on an <strong>“AS IS”</strong> and <strong>“AS AVAILABLE”</strong> basis without warranties of any kind, either express or implied.
+          Results are probabilistic and generated using artificial intelligence and computer vision techniques. We make no warranty
+          regarding 100% scientific or medical accuracy.
+        </p>
+
+        <h2>5. Limitation of Liability</h2>
+        <p>
+          To the maximum extent permitted by applicable law, in no event shall the developer be liable for any indirect, incidental,
+          special, consequential, or punitive damages arising out of or related to your access to or use of the application.
+        </p>
+
+        <h2>6. Termination</h2>
+        <p>
+          We reserve the right to suspend or terminate your access to the application at our sole discretion, without notice,
+          for conduct that violates these Terms or is harmful to other users or our business interests.
+        </p>
+
+        <h2>7. Governing Law</h2>
+        <p>
+          These Terms shall be governed by and construed in accordance with the laws of Ukraine, without regard to its conflict
+          of law principles.
+        </p>
+
+        <h2>8. Contact Information</h2>
+        <p>
+          For any questions or support regarding these Terms of Use, please reach out to:
+        </p>
+        <p>
+          <strong>Email:</strong> <a href="mailto:kelebronofficial@gmail.com">kelebronofficial@gmail.com</a><br />
+          <strong>Developer:</strong> Dmitry Mishchenko
+        </p>
+      </div>
+
+      <footer>
+        <div class="nav-links">
+          <a href="About.html">About Iris AI</a>
+          <a href="terms.html">Terms of Use</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+        <p>&copy; 2026 Dmitry Mishchenko. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
