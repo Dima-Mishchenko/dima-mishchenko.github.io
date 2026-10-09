@@ -17,7 +17,7 @@
   "trialPillsCountLimit": 5,
   "trialPillsSearchLimit": 15,
   "allowManualSearchOfFood": false,
-  "showDistractingUserReq": true,
+  "showDistractingUserReq": false,
   "showDistractingUserReqForWoman": true,
   "showDistractingUserReqForCalorie": false,
   "prayerOnboardingAllowSkipImmediate": false
