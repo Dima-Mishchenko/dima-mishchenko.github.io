@@ -1,10 +1,9 @@
-# Calories Tracker
+# Capy: Cal Counter, Tracker AI
 
-Official web portal and policy documentation for **Calories Tracker** operated by **Individual entrepreneur DMYTRO MISHCHENKO**.
+Official web showcase and policy documentation for **Capy: Cal Counter, Tracker AI** for iOS, operated by **Individual entrepreneur DMYTRO MISHCHENKO**.
 
 - **Website:** https://dima-mishchenko.github.io/
-- **Pricing & Plans:** https://dima-mishchenko.github.io/pricing.html
+- **iOS App Store:** https://apps.apple.com/app/id6757362416
 - **Terms of Service:** https://dima-mishchenko.github.io/terms.html
 - **Privacy Policy:** https://dima-mishchenko.github.io/privacy.html
-- **Refund Policy:** https://dima-mishchenko.github.io/refund.html
-- **Contact:** kelebronofficial@gmail.com
+- **Support:** kelebronofficial@gmail.com
