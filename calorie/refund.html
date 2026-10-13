@@ -3,26 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Refund & Cancellation Policy - Calories Tracker</title>
-  <meta name="description" content="Refund and cancellation policy for Calories Tracker digital subscriptions and purchases operated by Individual entrepreneur DMYTRO MISHCHENKO." />
+  <title>Refund & Cancellation Policy — Capy</title>
+  <meta name="description" content="Refund and cancellation policy for Capy: Cal Counter, Tracker AI operated by Individual entrepreneur DMYTRO MISHCHENKO." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/png" href="assets/img/app-logo.png" />
 
   <style>
     :root {
-      --primary: #ff5a5f;
-      --primary-hover: #e0484d;
-      --primary-light: #fff0f1;
-      --secondary: #10b981;
-      --bg: #fafafc;
-      --card-bg: #ffffff;
-      --text-main: #1e293b;
-      --text-muted: #64748b;
-      --border-color: #e2e8f0;
-      --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --bg: #ffffff;
+      --bg-subtle: #fbfbfd;
+      --text: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --text-tertiary: #86868b;
+      --border: #e5e5ea;
+      --border-subtle: #f2f2f7;
+      --font: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Text', 'Helvetica Neue', sans-serif;
     }
 
     * {
@@ -32,316 +29,233 @@
     }
 
     body {
-      font-family: var(--font-body);
+      font-family: var(--font);
       background-color: var(--bg);
-      color: var(--text-main);
-      line-height: 1.7;
+      color: var(--text);
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.011em;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    header.site-header {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
+    header.nav {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 100;
     }
 
-    .nav-container {
+    .nav-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 24px;
-      max-width: 900px;
+      height: 58px;
+      max-width: 760px;
       margin: 0 auto;
+      padding: 0 24px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
-      color: var(--text-main);
+      color: var(--text);
     }
 
     .brand img {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
     }
 
-    .brand-name {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      font-weight: 800;
-    }
-
-    .brand-name span {
-      color: var(--primary);
-    }
-
-    nav.nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      margin-left: 20px;
-      transition: color 0.2s;
-    }
-
-    nav.nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .legal-content {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 24px;
-      padding: 50px 48px;
-      margin: 40px auto 70px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    }
-
-    .legal-header {
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 24px;
-      margin-bottom: 32px;
-    }
-
-    .legal-header h1 {
-      font-family: var(--font-heading);
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    .last-updated {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .legal-content h2 {
-      font-family: var(--font-heading);
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin: 32px 0 14px;
-      color: var(--text-main);
-    }
-
-    .legal-content p {
-      color: #334155;
-      margin-bottom: 16px;
+    .brand-title {
       font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
     }
 
-    .legal-content ul {
-      margin-bottom: 20px;
-      padding-left: 24px;
-      color: #334155;
-    }
-
-    .legal-content li {
-      margin-bottom: 8px;
-    }
-
-    .guarantee-callout {
-      background: #ecfdf5;
-      border: 1px solid #a7f3d0;
-      border-left: 5px solid var(--secondary);
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin: 24px 0;
-    }
-
-    .guarantee-callout h3 {
-      font-family: var(--font-heading);
-      color: #065f46;
-      font-size: 1.25rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .guarantee-callout p {
-      color: #047857;
-      margin-bottom: 0;
-      font-size: 0.98rem;
-    }
-
-    .step-card {
-      background: #f8fafc;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 18px 22px;
-      margin-bottom: 14px;
-    }
-
-    .step-card strong {
-      color: var(--text-main);
-      display: block;
-      margin-bottom: 4px;
-      font-size: 1.05rem;
-    }
-
-    /* Footer */
-    footer.site-footer {
-      background: #0f172a;
-      color: #94a3b8;
-      padding: 50px 0 30px;
-      border-top: 1px solid #1e293b;
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
       font-size: 0.88rem;
+      margin-left: 20px;
+      transition: color 0.15s ease;
     }
 
-    .footer-content {
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    main {
+      padding: 60px 0 100px;
+    }
+
+    .doc-header {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .doc-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .doc-header p {
+      font-size: 0.9rem;
+      color: var(--text-tertiary);
+    }
+
+    .note-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+      color: var(--text-secondary);
+    }
+
+    .note-card strong {
+      color: var(--text);
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: 36px 0 12px;
+      color: var(--text);
+    }
+
+    p {
+      color: #333336;
+      font-size: 0.98rem;
+      margin-bottom: 16px;
+      line-height: 1.65;
+    }
+
+    ul {
+      margin-bottom: 20px;
+      padding-left: 22px;
+      color: #333336;
+    }
+
+    li {
+      margin-bottom: 8px;
+      font-size: 0.96rem;
+    }
+
+    footer.site-footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      font-size: 0.82rem;
+      color: var(--text-tertiary);
+      background: var(--bg-subtle);
+    }
+
+    .footer-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 16px;
     }
 
-    .footer-content a {
-      color: #94a3b8;
+    .footer-inner a {
+      color: var(--text-secondary);
       text-decoration: none;
-      margin-left: 16px;
     }
 
-    .footer-content a:hover {
-      color: #ffffff;
-    }
-
-    @media (max-width: 600px) {
-      .legal-content {
-        padding: 30px 20px;
-      }
-      .legal-header h1 {
-        font-size: 2rem;
-      }
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-      }
-      .footer-content a {
-        margin: 0 8px;
-      }
+    .footer-inner a:hover {
+      color: var(--text);
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <header class="site-header">
-    <div class="nav-container">
+  <header class="nav">
+    <div class="nav-inner">
       <a href="/" class="brand">
-        <img src="assets/img/app-logo.png" alt="Calories Tracker Icon" />
-        <span class="brand-name">Calories<span>Tracker</span></span>
+        <img src="assets/img/app-logo.png" alt="Capy Icon" />
+        <span class="brand-title">Capy</span>
       </a>
-      <nav class="nav-links">
-        <a href="/">Home</a>
+      <div class="nav-links">
+        <a href="/">Overview</a>
         <a href="pricing.html">Pricing</a>
         <a href="terms.html">Terms</a>
         <a href="privacy.html">Privacy</a>
-        <a href="refund.html" style="color: var(--primary);">Refunds</a>
-      </nav>
+      </div>
     </div>
   </header>
 
   <main class="container">
-    <div class="legal-content">
-      <div class="legal-header">
-        <h1>Refund & Cancellation Policy</h1>
-        <p class="last-updated">Last Updated: October 13, 2026</p>
-      </div>
-
-      <div class="guarantee-callout">
-        <h3>🛡️ 14-Day Money-Back Guarantee</h3>
-        <p>
-          We stand firmly behind Calories Tracker. If our app does not meet your expectations or help you better manage your daily nutrition, you are entitled to a full, 100% refund within 14 calendar days of your initial purchase.
-        </p>
-      </div>
-
-      <h2>1. Overview & Scope</h2>
-      <p>
-        This Refund and Cancellation Policy applies to all digital goods, recurring subscriptions ("Weekly", "Yearly"), and one-time purchases ("Lifetime Pass") offered under <strong>Calories Tracker</strong> by <strong>Individual entrepreneur DMYTRO MISHCHENKO</strong> (Tax ID: 306418793, Tbilisi, Georgia).
-      </p>
-
-      <h2>2. Subscription Cancellation Policy</h2>
-      <p>
-        You have the freedom to cancel recurring subscriptions at any time without fees or penalties:
-      </p>
-      <ul>
-        <li><strong>Free Trial Cancellations:</strong> If you start a 3-day free trial on the Weekly plan, you can cancel at any time during the 3 days. Your credit card will not be charged.</li>
-        <li><strong>Active Subscriptions:</strong> When you cancel an ongoing subscription, your cancellation takes effect at the end of the current paid billing cycle. You will retain full Pro access until that date, after which your account will revert to the standard free tier without further charges.</li>
-      </ul>
-
-      <h2>3. 14-Day Money-Back Guarantee Eligibility</h2>
-      <p>You qualify for a refund if:</p>
-      <ul>
-        <li>You submit your request within <strong>14 calendar days</strong> of the original transaction date.</li>
-        <li>You encountered technical difficulties that our support team could not resolve within a reasonable timeframe, or the product features did not perform as advertised.</li>
-        <li>You forgot to cancel before the trial ended, provided you submit your refund request within 14 days of the initial billing charge.</li>
-      </ul>
-
-      <h2>4. How to Request a Refund</h2>
-      <p>Follow the steps below depending on where you completed your purchase:</p>
-
-      <div class="step-card">
-        <strong>Option A: Web Checkout / Paddle / Lemon Squeezy Purchases</strong>
-        <p style="margin-bottom: 0;">
-          Send an email directly to <a href="mailto:kelebronofficial@gmail.com" style="color: var(--primary); font-weight: 600;">kelebronofficial@gmail.com</a> with the subject line <em>"Refund Request - Calories Tracker"</em>. Include your order/transaction ID and the email address used at checkout. We process direct refund requests within <strong>24 to 48 business hours</strong>.
-        </p>
-      </div>
-
-      <div class="step-card">
-        <strong>Option B: Apple App Store In-App Purchases</strong>
-        <p style="margin-bottom: 0;">
-          Per Apple's strict privacy and payment guidelines, in-app purchases made through the iOS App Store must be refunded directly through Apple. You can visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener" style="color: var(--primary); font-weight: 600;">reportaproblem.apple.com</a>, log in with your Apple ID, select "Request a refund", and choose your reason.
-        </p>
-      </div>
-
-      <div class="step-card">
-        <strong>Option C: Google Play Store In-App Purchases</strong>
-        <p style="margin-bottom: 0;">
-          For Google Play purchases within 48 hours, you can request a refund directly via your Google Play order history or by emailing us your Google Play order number (starting with <code>GPA.</code>) at <a href="mailto:kelebronofficial@gmail.com" style="color: var(--primary); font-weight: 600;">kelebronofficial@gmail.com</a>.
-        </p>
-      </div>
-
-      <h2>5. Refund Processing Timeline</h2>
-      <p>
-        Once approved, refunds are credited back to the original method of payment (credit card, debit card, PayPal, or Apple/Google balance). It typically takes <strong>5 to 10 business days</strong> for the refunded credit to appear on your bank statement, depending on your card issuer.
-      </p>
-
-      <h2>6. Chargebacks & Disputes</h2>
-      <p>
-        We encourage you to contact our customer support team first before opening a formal chargeback with your bank or credit card company. We resolve refund requests promptly and without hassle.
-      </p>
-
-      <h2>7. Merchant Contact Information</h2>
-      <p>For any inquiries regarding this policy or payment issues, please contact:</p>
-      <p>
-        <strong>Individual entrepreneur DMYTRO MISHCHENKO</strong><br />
-        Tax ID: 306418793<br />
-        Address: Krtsanisi district, Fonichala settlement 3, building 5, hall 2, floor 4, Tbilisi 0168, Georgia<br />
-        Customer Support: <a href="mailto:kelebronofficial@gmail.com" style="color: var(--primary);">kelebronofficial@gmail.com</a>
-      </p>
+    <div class="doc-header">
+      <h1>Refund & Cancellation Policy</h1>
+      <p>Last updated: October 13, 2026</p>
     </div>
+
+    <div class="note-card">
+      <strong>14-Day Money-Back Guarantee:</strong><br />
+      We want you to be completely satisfied with Capy, developed by <strong>Dmytro Mishchenko</strong> (Individual entrepreneur DMYTRO MISHCHENKO). If you are not satisfied with your purchase within 14 calendar days, we provide a full refund.
+    </div>
+
+    <h2>1. Subscription Cancellations</h2>
+    <p>
+      You can cancel your subscription at any time:
+    </p>
+    <ul>
+      <li><strong>Free Trials:</strong> If you start a 3-day free trial on the Weekly plan, you can cancel at any time during the trial through your Apple ID settings without being charged.</li>
+      <li><strong>Active Subscriptions:</strong> Once cancelled, your subscription will remain active until the end of the current billing cycle. You will not be charged again.</li>
+      <li><strong>How to Cancel on iOS:</strong> Open iPhone Settings &rarr; Tap your Name &rarr; Tap Subscriptions &rarr; Select Capy &rarr; Tap "Cancel Subscription".</li>
+    </ul>
+
+    <h2>2. Refund Eligibility & Request Process</h2>
+    <p>
+      Refund requests submitted within 14 days of purchase are eligible for a full refund:
+    </p>
+    <ul>
+      <li><strong>Apple In-App Purchases:</strong> For subscriptions purchased directly via the iOS App Store, refunds are processed according to Apple's guidelines. Visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener" style="color: var(--text); font-weight: 500;">reportaproblem.apple.com</a>, sign in with your Apple ID, select "Request a refund", and choose your reason.</li>
+      <li><strong>Direct / Web Inquiries:</strong> If you need assistance or purchased through an authorized merchant checkout, email <a href="mailto:kelebronofficial@gmail.com" style="color: var(--text); font-weight: 500;">kelebronofficial@gmail.com</a> with your purchase receipt or transaction reference. We process eligible refund requests within 24 to 48 business hours.</li>
+    </ul>
+
+    <h2>3. Processing Time</h2>
+    <p>
+      Once issued, refunds generally appear on your original payment method (credit card, debit card, or Apple balance) within 5 to 10 business days depending on your bank or payment provider.
+    </p>
+
+    <h2>4. Contact Us</h2>
+    <p>
+      For any questions or concerns regarding billing, cancellations, or refunds:
+    </p>
+    <p>
+      <strong>Dmytro Mishchenko</strong><br />
+      Individual entrepreneur DMYTRO MISHCHENKO<br />
+      Tax ID: 306418793<br />
+      Address: Krtsanisi district, Fonichala settlement 3, building 5, hall 2, floor 4, Tbilisi 0168, Georgia<br />
+      Support Email: <a href="mailto:kelebronofficial@gmail.com" style="color: var(--text);">kelebronofficial@gmail.com</a>
+    </p>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-content">
-      <div>&copy; 2026 Calories Tracker. Individual entrepreneur DMYTRO MISHCHENKO.</div>
+    <div class="container footer-inner">
+      <div>&copy; 2026 Capy. Developed by Dmytro Mishchenko (Individual entrepreneur DMYTRO MISHCHENKO).</div>
       <div>
-        <a href="/">Home</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="terms.html">Terms</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="refund.html">Refunds</a>
+        <a href="/">Overview</a> &middot;
+        <a href="terms.html">Terms</a> &middot;
+        <a href="privacy.html">Privacy</a> &middot;
+        <a href="mailto:kelebronofficial@gmail.com">Support</a>
       </div>
     </div>
   </footer>
