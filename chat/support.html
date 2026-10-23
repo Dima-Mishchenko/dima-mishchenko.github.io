@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support & Help Center — Y: AI Photo Retouch & Glow Up</title>
+  <meta name="description" content="Support and Help Center for Y: AI Photo Retouch & Glow Up on Google Play, operated by Individual entrepreneur DMYTRO MISHCHENKO." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-subtle: #fbfbfd;
+      --text: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --text-tertiary: #86868b;
+      --border: #e5e5ea;
+      --border-subtle: #f2f2f7;
+      --accent: #2563eb;
+      --font: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.011em;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header.nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 100;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: #111827;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      border-radius: 8px;
+    }
+
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-left: 20px;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    main {
+      padding: 50px 0 90px;
+    }
+
+    .doc-header {
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .doc-header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .doc-header p {
+      font-size: 0.92rem;
+      color: var(--text-tertiary);
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, #f0f7ff, #f8faff);
+      border: 1px solid #bfdbfe;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .contact-card h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: #475569;
+      margin-bottom: 18px;
+      font-size: 0.96rem;
+    }
+
+    .btn-email {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff !important;
+      padding: 12px 28px;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.15s ease;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-email:hover {
+      background: #1d4ed8;
+      text-decoration: none;
+    }
+
+    .faq-item {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 16px;
+    }
+
+    .faq-item h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      margin-bottom: 8px;
+      color: #333336;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .faq-item ol, .faq-item ul {
+      margin-top: 8px;
+      margin-bottom: 8px;
+      padding-left: 20px;
+      font-size: 0.95rem;
+      color: #333336;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0 48px;
+      font-size: 0.88rem;
+      color: var(--text-tertiary);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--text-secondary);
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="About.html" class="brand">
+        <span class="brand-badge">Y</span>
+        <span class="brand-title">Y: AI Photo Retouch</span>
+      </a>
+      <nav class="nav-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="doc-header">
+        <h1>Support & Help Center</h1>
+        <p>Customer Support • Frequently Asked Questions • Feedback</p>
+      </div>
+
+      <div class="contact-card">
+        <h2>Need Help or Have Feedback?</h2>
+        <p>We are here to assist with any questions, bug reports, feature suggestions, or subscription assistance.</p>
+        <a href="mailto:kelebronofficial@gmail.com?subject=Y%20Support%20Request" class="btn-email">Contact Support (kelebronofficial@gmail.com)</a>
+      </div>
+
+      <h2 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 20px;">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>How do I cancel my subscription on Google Play?</h3>
+        <p>You can cancel or manage your subscription at any time directly through Google Play:</p>
+        <ol>
+          <li>Open the <strong>Google Play Store</strong> app on your Android device.</li>
+          <li>Tap your profile icon in the top right corner.</li>
+          <li>Tap <strong>Payments & subscriptions</strong> &rarr; <strong>Subscriptions</strong>.</li>
+          <li>Find <strong>Y: AI Photo Retouch & Glow Up</strong> and tap <strong>Cancel subscription</strong>.</li>
+        </ol>
+        <p>Your subscription features remain active until the end of the current billing cycle.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I restore my purchase on a new device?</h3>
+        <p>
+          Make sure you are logged into the same Google Account that purchased the subscription on Google Play. Inside the app, open <strong>Settings &rarr; Upgrade</strong> (or tap <strong>Restore Purchases</strong> in the top corner of the paywall). Google Play will automatically verify your entitlement and restore Pro access.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I report inappropriate or offensive AI-generated content?</h3>
+        <p>
+          We take content safety seriously. In compliance with Google Play Generative AI standards, you can report any objectionable output directly:
+        </p>
+        <ul>
+          <li>In the full-screen photo viewer, tap the <strong>Flag icon (⚑)</strong> in the top-left corner.</li>
+          <li>Or long-press on any bot message in the chat and tap <strong>"Report content"</strong>.</li>
+          <li>Select the reason (e.g. Inappropriate/Offensive, Violent, Distorted) and submit. Our moderation system will review the report immediately.</li>
+        </ul>
+      </div>
+
+      <div class="faq-item">
+        <h3>How do I request deletion of my photos and data?</h3>
+        <p>
+          You can delete any project photo directly from your app's project history at any time. If you wish to delete your entire account, usage logs, or any associated data from our servers, send an email to <a href="mailto:kelebronofficial@gmail.com">kelebronofficial@gmail.com</a> with the subject <em>"Data Deletion Request"</em>, and we will fulfill your request promptly within 30 days.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Are my private photos used to train public AI models?</h3>
+        <p>
+          <strong>No.</strong> Your photos are processed securely in temporary cloud buffers solely to perform the requested edits (e.g., retouching, background removal, styling) and are never used to train public machine learning models without your explicit consent.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Individual entrepreneur DMYTRO MISHCHENKO. All rights reserved.</p>
+      <p style="margin-top: 8px;">
+        <a href="privacy.html">Privacy Policy</a> •
+        <a href="terms.html">Terms of Use</a> •
+        <a href="support.html">Support</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
