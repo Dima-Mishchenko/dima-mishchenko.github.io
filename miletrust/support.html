@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support &amp; FAQ — MileTrust</title>
+    <style>
+      :root {
+        --bg-color: #f7f7f5;
+        --primary-color: #059669;
+        --accent-color: #10b981;
+        --text-main: #0f172a;
+        --text-secondary: #475569;
+        --card-bg: #ffffff;
+        --border-color: #e2e8f0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.65;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: var(--card-bg);
+        border-bottom: 1px solid var(--border-color);
+        padding: 18px 20px;
+        text-align: center;
+      }
+
+      .logo-container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--text-main);
+      }
+
+      .logo-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(5, 150, 105, 0.18);
+      }
+
+      .logo-text {
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.4px;
+      }
+
+      .container {
+        max-width: 820px;
+        margin: 36px auto;
+        padding: 0 20px;
+      }
+
+      .card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: 800;
+        margin: 0 0 8px;
+        text-align: center;
+      }
+
+      .subtitle {
+        font-size: 16px;
+        color: var(--text-secondary);
+        text-align: center;
+        margin: 0 0 32px;
+      }
+
+      h2 {
+        font-size: 19px;
+        font-weight: 700;
+        margin-top: 30px;
+        margin-bottom: 14px;
+        border-bottom: 2px solid var(--bg-color);
+        padding-bottom: 8px;
+        color: var(--primary-color);
+      }
+
+      h3 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 18px;
+        margin-bottom: 6px;
+        color: var(--text-main);
+      }
+
+      p,
+      li {
+        font-size: 15px;
+        color: var(--text-secondary);
+      }
+
+      ul {
+        padding-left: 20px;
+      }
+
+      li {
+        margin-bottom: 6px;
+      }
+
+      .contact-box {
+        margin-top: 32px;
+        padding: 24px;
+        background-color: #f0fdf4;
+        border: 1px solid #bbf7d0;
+        border-radius: 14px;
+        text-align: center;
+      }
+
+      .contact-btn {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 12px 24px;
+        background-color: var(--primary-color);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 15px;
+        text-decoration: none;
+        border-radius: 999px;
+      }
+
+      .contact-btn:hover {
+        background-color: #047857;
+      }
+
+      footer {
+        text-align: center;
+        margin: 28px 0 44px;
+        font-size: 13px;
+        color: var(--text-secondary);
+      }
+
+      footer a {
+        color: var(--primary-color);
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      @media (max-width: 600px) {
+        .card {
+          padding: 24px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="support.html" class="logo-container">
+        <img src="appicon.png" alt="MileTrust App Icon" class="logo-icon" />
+        <span class="logo-text">MileTrust</span>
+      </a>
+    </header>
+
+    <main class="container">
+      <div class="card">
+        <h1>Support &amp; FAQ</h1>
+        <p class="subtitle">
+          Help with automatic mileage tracking, IRS tax reports, iCloud sync, and
+          MileTrust Pro.
+        </p>
+
+        <h2>Automatic Drive Tracking</h2>
+
+        <h3>How do I get the most reliable background tracking?</h3>
+        <p>
+          Open <strong>Settings &rarr; Permissions &amp; Sensors</strong> inside
+          MileTrust and verify that:
+        </p>
+        <ul>
+          <li>
+            <strong>Location</strong> is set to <strong>Always</strong> with
+            <strong>Precise Location</strong> enabled.
+          </li>
+          <li>
+            <strong>Motion &amp; Fitness</strong> is allowed so MileTrust can
+            detect driving starts/stops and audit missed drives.
+          </li>
+          <li>
+            <strong>Background App Refresh</strong> is enabled and Low Power
+            Mode is off during work shifts.
+          </li>
+        </ul>
+
+        <h3>What if I ride a train, bus, or as a passenger?</h3>
+        <p>
+          Enable <strong>Car Bluetooth / CarPlay Only</strong> in
+          <strong>Settings &rarr; Tracking Engine</strong> so MileTrust only
+          starts automatic drives when connected to your car's Bluetooth or
+          CarPlay.
+        </p>
+
+        <h3>What is Missed-Drive Gap Detection?</h3>
+        <p>
+          If iOS suspends background tracking or your phone battery dies during
+          a drive, MileTrust audits Apple's hardware Motion &amp; Fitness
+          history and location discontinuities, then reconstructs the missing
+          route distance with Apple Maps so you can review and recover it in one
+          tap.
+        </p>
+
+        <h2>Classification &amp; Tax Reports</h2>
+
+        <h3>Which IRS mileage rates does MileTrust use?</h3>
+        <p>
+          MileTrust automatically applies date-aware IRS standard mileage rates
+          by trip date (including 2024, 2025, and 2026 H1/H2 splits), plus
+          statutory Medical and Charity rates. Pro users can also set a custom
+          employer reimbursement rate per mile.
+        </p>
+
+        <h3>What is included in MileTrust Free vs. MileTrust Pro?</h3>
+        <ul>
+          <li>
+            <strong>Free:</strong> Unlimited automatic GPS drive tracking, swipe
+            classification with Undo, missed-drive gap recovery, 1 vehicle, 1
+            frequent route rule, private iCloud backup, JSON backup/restore, and
+            in-app tax report previews.
+          </li>
+          <li>
+            <strong>MileTrust Pro:</strong> IRS Schedule C, CPA Audit,
+            TurboTax/QuickBooks, Employer Reimbursement, Expensify/Concur, and
+            Excel/Sheets PDF &amp; CSV exports, receipt photo appendices, custom
+            reimbursement rates, multi-vehicle logs, and unlimited frequent
+            route rules.
+          </li>
+        </ul>
+
+        <h2>Subscriptions &amp; Data</h2>
+
+        <h3>How do I restore, manage, or cancel my subscription?</h3>
+        <p>
+          Subscriptions are billed and managed through your Apple ID. You can
+          tap <strong>Restore</strong> on the MileTrust Pro screen, or manage or
+          cancel anytime in <strong>iPhone Settings &rarr; [Your Name] &rarr; Subscriptions</strong>
+          (or via <strong>Settings &rarr; Manage Subscription</strong> inside
+          MileTrust).
+        </p>
+
+        <h3>How do I back up or delete my data?</h3>
+        <p>
+          Go to <strong>Settings &rarr; Data &amp; Backup</strong> to export or
+          restore a portable JSON backup of your trips, vehicles, saved places,
+          and route rules, or permanently erase all mileage data.
+        </p>
+
+        <div class="contact-box">
+          <strong>Still need help?</strong>
+          <p style="margin: 6px 0 0">
+            Email our support team and we'll get back to you within 24–48 hours.
+          </p>
+          <a
+            class="contact-btn"
+            href="mailto:dimdos95@gmail.com?subject=MileTrust%20Support%20Request"
+            >Email Support (dimdos95@gmail.com)</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <p style="margin-top: 12px">&copy; 2026 MileTrust. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
